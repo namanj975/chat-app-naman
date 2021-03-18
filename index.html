@@ -10,6 +10,7 @@
   <title>chat app &#x1F499;&#x1F49A;&#x1F49B;&#128209;</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/yuku-t/jquery-textcomplete@v1.3.4/dist/jquery.textcomplete.js"></script>
   <script src="emoji_plugin/emojionearea.min.js"></script>
   <link rel="stylesheet" href="emoji_plugin/emojionearea.min.css">
@@ -125,7 +126,7 @@
       item.textContent = msg;
       messages.appendChild(item);
       window.scrollTo(0, document.body.scrollHeight);
-      alert(msg);
+      swal("User Joined","One more user has been joined","info");
     });
     socket.onAny((eventName, ...args) => {
         console.log("event name", eventName);
