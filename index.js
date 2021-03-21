@@ -1,7 +1,12 @@
 
 const express = require("express");
 const app = express();
-const http = require('http').createServer(app);
+var fs = require("fs");
+
+var ssls = {
+  key: fs.readFileSync('./chat.pem', 'utf8')
+};
+const http = require('https').createServer(ssls, app);
 const io = require('socket.io')(http);
 const path = require("path");
 const { config } = require("./config");
