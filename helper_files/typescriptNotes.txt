@@ -1,0 +1,27 @@
+1) for readonly keyword in ts
+--> https://www.tutorialsteacher.com/typescript/typescript-readonly#:~:text=Prefix%20readonly%20is%20used%20to,initialized%20inside%20the%20class%20constructor.
+
+
+2) for importing the JSON file in TYPESCRIPT CODE BASE 
+	-->To import this file in Typescript you have to do at least three steps:
+	1)In tsconfig. json , set "esModuleInterop" option to true .
+	2)In tsconfig. json , set "resolveJsonModule" option to true .
+	3) Import the file using import users from "./data/users. json"
+
+	--> Now you can import the json file any of the following form:
+	## syntax1 
+	import a from "a.json";
+	a.primaryMain
+
+	## syntax2
+	import * as a from "a.json";
+	a.default.primaryMain
+	
+	## syntax3 
+	import {default as a} from "a.json";
+	a.primaryMain
+
+
+3) for getting a proper type definitions for an object by simply providing that opbject
+-->website link
+https://transform.tools/json-to-typescript

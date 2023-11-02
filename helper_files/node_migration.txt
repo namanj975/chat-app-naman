@@ -1,0 +1,28 @@
+## steps to migrate to different node versions
+
+1) npm rebuild - for rebuilding packages with newer node version
+2) npm audit 
+3) npm audit fix
+4) npm audit fix --force (If required)
+5) npm outdated 
+6) npm update --save pkg1 pkg2 (If required after npm outdated command)
+7)npm dedupe (for removing the duplicate dependencies and normalizing the package tree)
+8)npx depcheck (this will analyze dependencies in the current project any identifies the unused and missing dependencies (it requires "depcheck" package to be installed globally in system or this package is installed locally in current project node modules)))
+9) remove the unused dependencies through npm uninstall command in case we get by running the depcheck command in previous step. 
+10)  --> Repeat from step 2 until we get 0 vulnerabilities.
+ 
+
+## for listing specific package
+
+npm ls <pkgname>
+
+## for listing all direct packages of the root project
+
+npm ls
+
+## for listing all direct packages and their dependencies
+
+npm ls --all 
+
+## 
+

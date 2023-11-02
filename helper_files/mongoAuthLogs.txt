@@ -1,0 +1,1053 @@
+Microsoft Windows [Version 10.0.19044.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\naman.jain>mongo --port 28002
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("ec871f85-092e-4257-a2d7-96a6059c9271") }
+MongoDB server version: 4.0.22
+Server has startup warnings:
+2022-03-23T15:35:55.231+0530 I CONTROL  [initandlisten]
+2022-03-23T15:35:55.231+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2022-03-23T15:35:55.232+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2022-03-23T15:35:55.233+0530 I CONTROL  [initandlisten]
+2022-03-23T15:35:55.235+0530 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2022-03-23T15:35:55.239+0530 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.
+2022-03-23T15:35:55.240+0530 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP
+2022-03-23T15:35:55.241+0530 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2022-03-23T15:35:55.241+0530 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2022-03-23T15:35:55.242+0530 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2022-03-23T15:35:55.243+0530 I CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use naman
+switched to db naman
+> db;
+naman
+> db.showCollectionInfos();
+2022-03-23T15:37:18.600+0530 E QUERY    [js] TypeError: db.showCollectionInfos is not a function :
+@(shell):1:1
+> db.help();
+DB methods:
+        db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]
+        db.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor
+        db.auth(username, password)
+        db.cloneDatabase(fromhost) - deprecated
+        db.commandHelp(name) returns the help for the command
+        db.copyDatabase(fromdb, todb, fromhost) - deprecated
+        db.createCollection(name, {size: ..., capped: ..., max: ...})
+        db.createView(name, viewOn, [{$operator: {...}}, ...], {viewOptions})
+        db.createUser(userDocument)
+        db.currentOp() displays currently executing operations in the db
+        db.dropDatabase()
+        db.eval() - deprecated
+        db.fsyncLock() flush data to disk and lock server for backups
+        db.fsyncUnlock() unlocks server following a db.fsyncLock()
+        db.getCollection(cname) same as db['cname'] or db.cname
+        db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+        db.getCollectionNames()
+        db.getLastError() - just returns the err msg string
+        db.getLastErrorObj() - return full status object
+        db.getLogComponents()
+        db.getMongo() get the server connection object
+        db.getMongo().setSlaveOk() allow queries on a replication slave server
+        db.getName()
+        db.getPrevError()
+        db.getProfilingLevel() - deprecated
+        db.getProfilingStatus() - returns if profiling is on and slow threshold
+        db.getReplicationInfo()
+        db.getSiblingDB(name) get the db at the same server as this one
+        db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+        db.hostInfo() get details about the server's host
+        db.isMaster() check replica primary status
+        db.hello() check replica primary status
+        db.killOp(opid) kills the current operation in the db
+        db.listCommands() lists all the db commands
+        db.loadServerScripts() loads all the scripts in db.system.js
+        db.logout()
+        db.printCollectionStats()
+        db.printReplicationInfo()
+        db.printShardingStatus()
+        db.printSecondaryReplicationInfo(()
+        db.dropUser(username)
+        db.repairDatabase()
+        db.resetError()
+        db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into {cmdObj: 1}
+        db.serverStatus()
+        db.setLogLevel(level,<component>)
+        db.setProfilingLevel(level,slowms) 0=off 1=slow 2=all
+        db.setWriteConcern(<write concern doc>) - sets the write concern for writes to the db
+        db.unsetWriteConcern(<write concern doc>) - unsets the write concern for writes to the db
+        db.setVerboseShell(flag) display extra information in shell output
+        db.shutdownServer()
+        db.stats()
+        db.version() current version of the server
+> db.getCollectionInfos();
+[ ]
+> ^C
+bye
+
+C:\Users\naman.jain>
+
+C:\Users\naman.jain>mongosh --port 27017
+'mongosh' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\naman.jain>mongo --port 27017
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("4a4ecbb8-c48e-4ceb-a938-5142a4cc1ed0") }
+MongoDB server version: 4.0.22
+Server has startup warnings:
+2022-03-19T13:45:12.368+0530 I CONTROL  [initandlisten]
+2022-03-19T13:45:12.368+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2022-03-19T13:45:12.368+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2022-03-19T13:45:12.369+0530 I CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> ^C
+bye
+
+C:\Users\naman.jain>mongo --port 28002
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("583a503f-9595-4de6-8409-d8dcf9f4056e") }
+MongoDB server version: 4.0.22
+Server has startup warnings:
+2022-03-23T15:35:55.231+0530 I CONTROL  [initandlisten]
+2022-03-23T15:35:55.231+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2022-03-23T15:35:55.232+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2022-03-23T15:35:55.233+0530 I CONTROL  [initandlisten]
+2022-03-23T15:35:55.235+0530 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2022-03-23T15:35:55.239+0530 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.
+2022-03-23T15:35:55.240+0530 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP
+2022-03-23T15:35:55.241+0530 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2022-03-23T15:35:55.241+0530 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2022-03-23T15:35:55.242+0530 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2022-03-23T15:35:55.243+0530 I CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use admin
+switched to db admin
+> db.createUser({user:'naman',pwd :passwordPrompt(),roles:[{role:"userAdminAnyDatabase",db:"admin"},{role:"readWriteAnyDatabase",db:"admin"}]})
+2022-03-23T16:38:49.324+0530 E QUERY    [js] ReferenceError: passwordPrompt is not defined :
+@(shell):1:29
+> db.createUser({user : naman , pwd : "naman",roles:[{role:"userAdminAnyDatabase", db:"admin"},{role: "readWriteAnyDatabase",db:"admin"}]})
+2022-03-23T16:43:00.645+0530 E QUERY    [js] ReferenceError: naman is not defined :
+@(shell):1:16
+> db.createUser({user: "naman",pwd: "naman",roles:[{role:"userAdminAnyDatabase",db:"admin"},{"readWriteAnyDatabase",db:"admin"}]})
+2022-03-23T16:48:32.847+0530 E QUERY    [js] SyntaxError: missing : after property id @(shell):1:113
+> db.createUser({user:"naman", pwd: "naman",roles:[{role: "userAdminAnyDatabase",db: "admin"},{role:"readWriteAnyDatabase",db:"admin"}]})
+Successfully added user: {
+        "user" : "naman",
+        "roles" : [
+                {
+                        "role" : "userAdminAnyDatabase",
+                        "db" : "admin"
+                },
+                {
+                        "role" : "readWriteAnyDatabase",
+                        "db" : "admin"
+                }
+        ]
+}
+> db.adminCommand({shutDown:1})
+{
+        "ok" : 0,
+        "errmsg" : "no such command: 'shutDown'",
+        "code" : 59,
+        "codeName" : "CommandNotFound"
+}
+> db.adminCommand({shutdown:1})
+2022-03-23T17:00:07.668+0530 I NETWORK  [js] DBClientConnection failed to receive message from 127.0.0.1:28002 - HostUnreachable: Connection reset by peer
+2022-03-23T17:00:07.669+0530 E QUERY    [js] Error: error doing query: failed: network error while attempting to run command 'shutdown' on host '127.0.0.1:28002'  :
+DB.prototype.runCommand@src/mongo/shell/db.js:168:1
+DB.prototype.adminCommand@src/mongo/shell/db.js:185:1
+@(shell):1:1
+2022-03-23T17:00:07.671+0530 I NETWORK  [js] trying reconnect to 127.0.0.1:28002 failed
+2022-03-23T17:00:09.724+0530 I NETWORK  [js] reconnect 127.0.0.1:28002 failed failed
+> ^C
+bye
+2022-03-23T17:00:15.505+0530 I NETWORK  [js] trying reconnect to 127.0.0.1:28002 failed
+2022-03-23T17:00:17.536+0530 I NETWORK  [js] reconnect 127.0.0.1:28002 failed failed
+2022-03-23T17:00:17.537+0530 I QUERY    [js] Failed to end session { id: UUID("583a503f-9595-4de6-8409-d8dcf9f4056e") } due to SocketException: socket exception [CONNECT_ERROR] server [couldn't connect to server 127.0.0.1:28002, connection attempt failed: SocketException: Error connecting to 127.0.0.1:28002 :: caused by :: No connection could be made because the target machine actively refused it.]
+
+C:\Users\naman.jain>mongo --port 28002
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("9bf238b4-21ca-44c1-954f-4db67e5bfb5f") }
+MongoDB server version: 4.0.22
+> show dbs;
+>
+> use naman
+switched to db naman
+> db.test.insert({A:1})
+WriteCommandError({
+        "ok" : 0,
+        "errmsg" : "command insert requires authentication",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+})
+> ^C
+bye
+
+C:\Users\naman.jain>
+
+C:\Users\naman.jain>mongo --port 28002
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("3f92fcbc-b4f6-45da-bfec-bc541c202f3e") }
+MongoDB server version: 4.0.22
+> db.Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+db.adWarning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+  db.db.addIdIfNeeded(^C
+bye
+
+C:\Users\naman.jain>
+
+C:\Users\naman.jain>
+
+C:\Users\naman.jain>mongo --port 28002 -u naman -p
+MongoDB shell version v4.0.22
+Enter password:
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("86f7af18-06ba-473a-9892-b43db27389ba") }
+MongoDB server version: 4.0.22
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use naman
+switched to db naman
+> naman.test.insert({A;1})
+2022-03-23T17:04:30.862+0530 E QUERY    [js] SyntaxError: missing : after property id @(shell):1:20
+> naman.test.insert({A:1})
+2022-03-23T17:04:36.104+0530 E QUERY    [js] ReferenceError: naman is not defined :
+@(shell):1:1
+> db.test.insert({A:1})
+WriteResult({ "nInserted" : 1 })
+> listdatabases
+2022-03-23T17:32:14.354+0530 E QUERY    [js] ReferenceError: listdatabases is not defined :
+@(shell):1:1
+> help;
+function (x) {
+    if (x == "mr") {
+        print("\nSee also http://dochub.mongodb.org/core/mapreduce");
+        print("\nfunction mapf() {");
+        print("  // 'this' holds current document to inspect");
+        print("  emit(key, value);");
+        print("}");
+        print("\nfunction reducef(key,value_array) {");
+        print("  return reduced_value;");
+        print("}");
+        print("\ndb.mycollection.mapReduce(mapf, reducef[, options])");
+        print("\noptions");
+        print("{[query : <query filter object>]");
+        print(" [, sort : <sort the query.  useful for optimization>]");
+        print(" [, limit : <number of objects to return from collection>]");
+        print(" [, out : <output-collection name>]");
+        print(" [, keeptemp: <true|false>]");
+        print(" [, finalize : <finalizefunction>]");
+        print(" [, scope : <object where fields go into javascript global scope >]");
+        print(" [, verbose : true]}\n");
+        return;
+    } else if (x == "connect") {
+        print(
+            "\nNormally one specifies the server on the mongo shell command line.  Run mongo --help to see those options.");
+        print("Additional connections may be opened:\n");
+        print("    var x = new Mongo('host[:port]');");
+        print("    var mydb = x.getDB('mydb');");
+        print("  or");
+        print("    var mydb = connect('host[:port]/mydb');");
+        print(
+            "\nNote: the REPL prompt only auto-reports getLastError() for the shell command line connection.\n");
+        return;
+    } else if (x == "keys") {
+        print("Tab completion and command history is available at the command prompt.\n");
+        print("Some emacs keystrokes are available too:");
+        print("  Ctrl-A start of line");
+        print("  Ctrl-E end of line");
+        print("  Ctrl-K del to end of line");
+        print("\nMulti-line commands");
+        print(
+            "You can enter a multi line javascript expression.  If parens, braces, etc. are not closed, you will see a new line ");
+        print(
+            "beginning with '...' characters.  Type the rest of your expression.  Press Ctrl-C to abort the data entry if you");
+        print("get stuck.\n");
+    } else if (x == "misc") {
+        print("\tb = new BinData(subtype,base64str)  create a BSON BinData value");
+        print("\tb.subtype()                         the BinData subtype (0..255)");
+        print("\tb.length()                          length of the BinData data in bytes");
+        print("\tb.hex()                             the data as a hex encoded string");
+        print("\tb.base64()                          the data as a base 64 encoded string");
+        print("\tb.toString()");
+        print();
+        print(
+            "\tb = HexData(subtype,hexstr)         create a BSON BinData value from a hex string");
+        print("\tb = UUID(hexstr)                    create a BSON BinData value of UUID subtype");
+        print("\tb = MD5(hexstr)                     create a BSON BinData value of MD5 subtype");
+        print(
+            "\t\"hexstr\"                            string, sequence of hex characters (no 0x prefix)");
+        print();
+        print("\to = new ObjectId()                  create a new ObjectId");
+        print(
+            "\to.getTimestamp()                    return timestamp derived from first 32 bits of the OID");
+        print("\to.isObjectId");
+        print("\to.toString()");
+        print("\to.equals(otherid)");
+        print();
+        print(
+            "\td = ISODate()                       like Date() but behaves more intuitively when used");
+        print(
+            "\td = ISODate('YYYY-MM-DD hh:mm:ss')    without an explicit \"new \" prefix on construction");
+        return;
+    } else if (x == "admin") {
+        print("\tls([path])                      list files");
+        print("\tpwd()                           returns current directory");
+        print("\tlistFiles([path])               returns file list");
+        print("\thostname()                      returns name of this host");
+        print("\tcat(fname)                      returns contents of text file as a string");
+        print("\tremoveFile(f)                   delete a file or directory");
+        print("\tload(jsfilename)                load and execute a .js file");
+        print("\trun(program[, args...])         spawn a program and wait for its completion");
+        print("\trunProgram(program[, args...])  same as run(), above");
+        print("\tsleep(m)                        sleep m milliseconds");
+        print("\tgetMemInfo()                    diagnostic");
+        return;
+    } else if (x == "test") {
+        print("\tMongoRunner.runMongod(args)   DELETES DATA DIR and then starts mongod");
+        print("\t                              returns a connection to the new server");
+        return;
+    } else if (x == "") {
+        print("\t" + "db.help()                    help on db methods");
+        print("\t" + "db.mycoll.help()             help on collection methods");
+        print("\t" + "sh.help()                    sharding helpers");
+        print("\t" + "rs.help()                    replica set helpers");
+        print("\t" + "help admin                   administrative help");
+        print("\t" + "help connect                 connecting to a db help");
+        print("\t" + "help keys                    key shortcuts");
+        print("\t" + "help misc                    misc things to know");
+        print("\t" + "help mr                      mapreduce");
+        print();
+        print("\t" + "show dbs                     show database names");
+        print("\t" + "show collections             show collections in current database");
+        print("\t" + "show users                   show users in current database");
+        print(
+            "\t" +
+            "show profile                 show most recent system.profile entries with time >= 1ms");
+        print("\t" + "show logs                    show the accessible logger names");
+        print(
+            "\t" +
+            "show log [name]              prints out the last segment of log in memory, 'global' is default");
+        print("\t" + "use <db_name>                set current database");
+        print("\t" + "db.foo.find()                list objects in collection foo");
+        print("\t" + "db.foo.find( { a : 1 } )     list objects in foo where a == 1");
+        print(
+            "\t" +
+            "it                           result of the last line evaluated; use to further iterate");
+        print("\t" +
+              "DBQuery.shellBatchSize = x   set default number of items to display on shell");
+        print("\t" + "exit                         quit the mongo shell");
+    } else
+        print("unknown help option");
+}
+>       } else {
+2022-03-23T17:32:45.171+0530 E QUERY    [js] SyntaxError: expected expression, got '}' @(shell):1:0
+> help();
+unknown help option
+> db.help;
+function () {
+        print("DB methods:");
+        print(
+            "\tdb.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]");
+        print(
+            "\tdb.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor");
+        print("\tdb.auth(username, password)");
+        print("\tdb.cloneDatabase(fromhost) - deprecated");
+        print("\tdb.commandHelp(name) returns the help for the command");
+        print("\tdb.copyDatabase(fromdb, todb, fromhost) - deprecated");
+        print("\tdb.createCollection(name, {size: ..., capped: ..., max: ...})");
+        print("\tdb.createView(name, viewOn, [{$operator: {...}}, ...], {viewOptions})");
+        print("\tdb.createUser(userDocument)");
+        print("\tdb.currentOp() displays currently executing operations in the db");
+        print("\tdb.dropDatabase()");
+        print("\tdb.eval() - deprecated");
+        print("\tdb.fsyncLock() flush data to disk and lock server for backups");
+        print("\tdb.fsyncUnlock() unlocks server following a db.fsyncLock()");
+        print("\tdb.getCollection(cname) same as db['cname'] or db.cname");
+        print(
+            "\tdb.getCollectionInfos([filter]) - returns a list that contains the names and options" +
+            " of the db's collections");
+        print("\tdb.getCollectionNames()");
+        print("\tdb.getLastError() - just returns the err msg string");
+        print("\tdb.getLastErrorObj() - return full status object");
+        print("\tdb.getLogComponents()");
+        print("\tdb.getMongo() get the server connection object");
+        print("\tdb.getMongo().setSlaveOk() allow queries on a replication slave server");
+        print("\tdb.getName()");
+        print("\tdb.getPrevError()");
+        print("\tdb.getProfilingLevel() - deprecated");
+        print("\tdb.getProfilingStatus() - returns if profiling is on and slow threshold");
+        print("\tdb.getReplicationInfo()");
+        print("\tdb.getSiblingDB(name) get the db at the same server as this one");
+        print(
+            "\tdb.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set");
+        print("\tdb.hostInfo() get details about the server's host");
+        print("\tdb.isMaster() check replica primary status");
+        print("\tdb.hello() check replica primary status");
+        print("\tdb.killOp(opid) kills the current operation in the db");
+        print("\tdb.listCommands() lists all the db commands");
+        print("\tdb.loadServerScripts() loads all the scripts in db.system.js");
+        print("\tdb.logout()");
+        print("\tdb.printCollectionStats()");
+        print("\tdb.printReplicationInfo()");
+        print("\tdb.printShardingStatus()");
+        print("\tdb.printSecondaryReplicationInfo(()");
+        print("\tdb.dropUser(username)");
+        print("\tdb.repairDatabase()");
+        print("\tdb.resetError()");
+        print(
+            "\tdb.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into {cmdObj: 1}");
+        print("\tdb.serverStatus()");
+        print("\tdb.setLogLevel(level,<component>)");
+        print("\tdb.setProfilingLevel(level,slowms) 0=off 1=slow 2=all");
+        print(
+            "\tdb.setWriteConcern(<write concern doc>) - sets the write concern for writes to the db");
+        print(
+            "\tdb.unsetWriteConcern(<write concern doc>) - unsets the write concern for writes to the db");
+        print("\tdb.setVerboseShell(flag) display extra information in shell output");
+        print("\tdb.shutdownServer()");
+        print("\tdb.stats()");
+        print("\tdb.version() current version of the server");
+
+        return __magicNoPrint;
+    }
+> db.help();
+DB methods:
+        db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]
+        db.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor
+        db.auth(username, password)
+        db.cloneDatabase(fromhost) - deprecated
+        db.commandHelp(name) returns the help for the command
+        db.copyDatabase(fromdb, todb, fromhost) - deprecated
+        db.createCollection(name, {size: ..., capped: ..., max: ...})
+        db.createView(name, viewOn, [{$operator: {...}}, ...], {viewOptions})
+        db.createUser(userDocument)
+        db.currentOp() displays currently executing operations in the db
+        db.dropDatabase()
+        db.eval() - deprecated
+        db.fsyncLock() flush data to disk and lock server for backups
+        db.fsyncUnlock() unlocks server following a db.fsyncLock()
+        db.getCollection(cname) same as db['cname'] or db.cname
+        db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+        db.getCollectionNames()
+        db.getLastError() - just returns the err msg string
+        db.getLastErrorObj() - return full status object
+        db.getLogComponents()
+        db.getMongo() get the server connection object
+        db.getMongo().setSlaveOk() allow queries on a replication slave server
+        db.getName()
+        db.getPrevError()
+        db.getProfilingLevel() - deprecated
+        db.getProfilingStatus() - returns if profiling is on and slow threshold
+        db.getReplicationInfo()
+        db.getSiblingDB(name) get the db at the same server as this one
+        db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+        db.hostInfo() get details about the server's host
+        db.isMaster() check replica primary status
+        db.hello() check replica primary status
+        db.killOp(opid) kills the current operation in the db
+        db.listCommands() lists all the db commands
+        db.loadServerScripts() loads all the scripts in db.system.js
+        db.logout()
+        db.printCollectionStats()
+        db.printReplicationInfo()
+        db.printShardingStatus()
+        db.printSecondaryReplicationInfo(()
+        db.dropUser(username)
+        db.repairDatabase()
+        db.resetError()
+        db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into {cmdObj: 1}
+        db.serverStatus()
+        db.setLogLevel(level,<component>)
+        db.setProfilingLevel(level,slowms) 0=off 1=slow 2=all
+        db.setWriteConcern(<write concern doc>) - sets the write concern for writes to the db
+        db.unsetWriteConcern(<write concern doc>) - unsets the write concern for writes to the db
+        db.setVerboseShell(flag) display extra information in shell output
+        db.shutdownServer()
+        db.stats()
+        db.version() current version of the server
+> db.help("mr");
+DB methods:
+        db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]
+        db.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor
+        db.auth(username, password)
+        db.cloneDatabase(fromhost) - deprecated
+        db.commandHelp(name) returns the help for the command
+        db.copyDatabase(fromdb, todb, fromhost) - deprecated
+        db.createCollection(name, {size: ..., capped: ..., max: ...})
+        db.createView(name, viewOn, [{$operator: {...}}, ...], {viewOptions})
+        db.createUser(userDocument)
+        db.currentOp() displays currently executing operations in the db
+        db.dropDatabase()
+        db.eval() - deprecated
+        db.fsyncLock() flush data to disk and lock server for backups
+        db.fsyncUnlock() unlocks server following a db.fsyncLock()
+        db.getCollection(cname) same as db['cname'] or db.cname
+        db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+        db.getCollectionNames()
+        db.getLastError() - just returns the err msg string
+        db.getLastErrorObj() - return full status object
+        db.getLogComponents()
+        db.getMongo() get the server connection object
+        db.getMongo().setSlaveOk() allow queries on a replication slave server
+        db.getName()
+        db.getPrevError()
+        db.getProfilingLevel() - deprecated
+        db.getProfilingStatus() - returns if profiling is on and slow threshold
+        db.getReplicationInfo()
+        db.getSiblingDB(name) get the db at the same server as this one
+        db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+        db.hostInfo() get details about the server's host
+        db.isMaster() check replica primary status
+        db.hello() check replica primary status
+        db.killOp(opid) kills the current operation in the db
+        db.listCommands() lists all the db commands
+        db.loadServerScripts() loads all the scripts in db.system.js
+        db.logout()
+        db.printCollectionStats()
+        db.printReplicationInfo()
+        db.printShardingStatus()
+        db.printSecondaryReplicationInfo(()
+        db.dropUser(username)
+        db.repairDatabase()
+        db.resetError()
+        db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into {cmdObj: 1}
+        db.serverStatus()
+        db.setLogLevel(level,<component>)
+        db.setProfilingLevel(level,slowms) 0=off 1=slow 2=all
+        db.setWriteConcern(<write concern doc>) - sets the write concern for writes to the db
+        db.unsetWriteConcern(<write concern doc>) - unsets the write concern for writes to the db
+        db.setVerboseShell(flag) display extra information in shell output
+        db.shutdownServer()
+        db.stats()
+        db.version() current version of the server
+> db.help;
+function () {
+        print("DB methods:");
+        print(
+            "\tdb.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]");
+        print(
+            "\tdb.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor");
+        print("\tdb.auth(username, password)");
+        print("\tdb.cloneDatabase(fromhost) - deprecated");
+        print("\tdb.commandHelp(name) returns the help for the command");
+        print("\tdb.copyDatabase(fromdb, todb, fromhost) - deprecated");
+        print("\tdb.createCollection(name, {size: ..., capped: ..., max: ...})");
+        print("\tdb.createView(name, viewOn, [{$operator: {...}}, ...], {viewOptions})");
+        print("\tdb.createUser(userDocument)");
+        print("\tdb.currentOp() displays currently executing operations in the db");
+        print("\tdb.dropDatabase()");
+        print("\tdb.eval() - deprecated");
+        print("\tdb.fsyncLock() flush data to disk and lock server for backups");
+        print("\tdb.fsyncUnlock() unlocks server following a db.fsyncLock()");
+        print("\tdb.getCollection(cname) same as db['cname'] or db.cname");
+        print(
+            "\tdb.getCollectionInfos([filter]) - returns a list that contains the names and options" +
+            " of the db's collections");
+        print("\tdb.getCollectionNames()");
+        print("\tdb.getLastError() - just returns the err msg string");
+        print("\tdb.getLastErrorObj() - return full status object");
+        print("\tdb.getLogComponents()");
+        print("\tdb.getMongo() get the server connection object");
+        print("\tdb.getMongo().setSlaveOk() allow queries on a replication slave server");
+        print("\tdb.getName()");
+        print("\tdb.getPrevError()");
+        print("\tdb.getProfilingLevel() - deprecated");
+        print("\tdb.getProfilingStatus() - returns if profiling is on and slow threshold");
+        print("\tdb.getReplicationInfo()");
+        print("\tdb.getSiblingDB(name) get the db at the same server as this one");
+        print(
+            "\tdb.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set");
+        print("\tdb.hostInfo() get details about the server's host");
+        print("\tdb.isMaster() check replica primary status");
+        print("\tdb.hello() check replica primary status");
+        print("\tdb.killOp(opid) kills the current operation in the db");
+        print("\tdb.listCommands() lists all the db commands");
+        print("\tdb.loadServerScripts() loads all the scripts in db.system.js");
+        print("\tdb.logout()");
+        print("\tdb.printCollectionStats()");
+        print("\tdb.printReplicationInfo()");
+        print("\tdb.printShardingStatus()");
+        print("\tdb.printSecondaryReplicationInfo(()");
+        print("\tdb.dropUser(username)");
+        print("\tdb.repairDatabase()");
+        print("\tdb.resetError()");
+        print(
+            "\tdb.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into {cmdObj: 1}");
+        print("\tdb.serverStatus()");
+        print("\tdb.setLogLevel(level,<component>)");
+        print("\tdb.setProfilingLevel(level,slowms) 0=off 1=slow 2=all");
+        print(
+            "\tdb.setWriteConcern(<write concern doc>) - sets the write concern for writes to the db");
+        print(
+            "\tdb.unsetWriteConcern(<write concern doc>) - unsets the write concern for writes to the db");
+        print("\tdb.setVerboseShell(flag) display extra information in shell output");
+        print("\tdb.shutdownServer()");
+        print("\tdb.stats()");
+        print("\tdb.version() current version of the server");
+
+        return __magicNoPrint;
+    }
+> db.getRoles();
+[ ]
+> use admin
+switched to db admin
+> db.getRoles();
+[ ]
+> db.getRole();
+2022-03-23T17:55:41.377+0530 E QUERY    [js] Error: Role name for getRole shell helper must be a string :
+DB.prototype.getRole@src/mongo/shell/db.js:1898:1
+@(shell):1:1
+> db.getRole("userAdminAnyDatabase");
+{
+        "role" : "userAdminAnyDatabase",
+        "db" : "admin",
+        "isBuiltin" : true,
+        "roles" : [ ],
+        "inheritedRoles" : [ ]
+}
+> db.getRoles();
+[ ]
+> db.getUsers();
+[
+        {
+                "_id" : "admin.naman",
+                "userId" : UUID("c00de1cf-a651-4367-a623-fa3629d4dd9b"),
+                "user" : "naman",
+                "db" : "admin",
+                "roles" : [
+                        {
+                                "role" : "userAdminAnyDatabase",
+                                "db" : "admin"
+                        },
+                        {
+                                "role" : "readWriteAnyDatabase",
+                                "db" : "admin"
+                        }
+                ],
+                "mechanisms" : [
+                        "SCRAM-SHA-1",
+                        "SCRAM-SHA-256"
+                ]
+        }
+]
+> db.help();
+DB methods:
+        db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]
+        db.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor
+        db.auth(username, password)
+        db.cloneDatabase(fromhost) - deprecated
+        db.commandHelp(name) returns the help for the command
+        db.copyDatabase(fromdb, todb, fromhost) - deprecated
+        db.createCollection(name, {size: ..., capped: ..., max: ...})
+        db.createView(name, viewOn, [{$operator: {...}}, ...], {viewOptions})
+        db.createUser(userDocument)
+        db.currentOp() displays currently executing operations in the db
+        db.dropDatabase()
+        db.eval() - deprecated
+        db.fsyncLock() flush data to disk and lock server for backups
+        db.fsyncUnlock() unlocks server following a db.fsyncLock()
+        db.getCollection(cname) same as db['cname'] or db.cname
+        db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db's collections
+        db.getCollectionNames()
+        db.getLastError() - just returns the err msg string
+        db.getLastErrorObj() - return full status object
+        db.getLogComponents()
+        db.getMongo() get the server connection object
+        db.getMongo().setSlaveOk() allow queries on a replication slave server
+        db.getName()
+        db.getPrevError()
+        db.getProfilingLevel() - deprecated
+        db.getProfilingStatus() - returns if profiling is on and slow threshold
+        db.getReplicationInfo()
+        db.getSiblingDB(name) get the db at the same server as this one
+        db.getWriteConcern() - returns the write concern used for any operations on this db, inherited from server object if set
+        db.hostInfo() get details about the server's host
+        db.isMaster() check replica primary status
+        db.hello() check replica primary status
+        db.killOp(opid) kills the current operation in the db
+        db.listCommands() lists all the db commands
+        db.loadServerScripts() loads all the scripts in db.system.js
+        db.logout()
+        db.printCollectionStats()
+        db.printReplicationInfo()
+        db.printShardingStatus()
+        db.printSecondaryReplicationInfo(()
+        db.dropUser(username)
+        db.repairDatabase()
+        db.resetError()
+        db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into {cmdObj: 1}
+        db.serverStatus()
+        db.setLogLevel(level,<component>)
+        db.setProfilingLevel(level,slowms) 0=off 1=slow 2=all
+        db.setWriteConcern(<write concern doc>) - sets the write concern for writes to the db
+        db.unsetWriteConcern(<write concern doc>) - unsets the write concern for writes to the db
+        db.setVerboseShell(flag) display extra information in shell output
+        db.shutdownServer()
+        db.stats()
+        db.version() current version of the server
+> db.version
+function () {
+        return this.serverBuildInfo().version;
+    }
+> db.version();
+4.0.22
+> db.serverBuildInfo;
+function () {
+        return this._adminCommand("buildinfo");
+    }
+> db.serverBuildInfo();
+{
+        "version" : "4.0.22",
+        "gitVersion" : "1741806fb46c161a1d42870f6e98f5100d196315",
+        "targetMinOS" : "Windows 7/Windows Server 2008 R2",
+        "modules" : [ ],
+        "allocator" : "tcmalloc",
+        "javascriptEngine" : "mozjs",
+        "sysInfo" : "deprecated",
+        "versionArray" : [
+                4,
+                0,
+                22,
+                0
+        ],
+        "openssl" : {
+                "running" : "Windows SChannel"
+        },
+        "buildEnvironment" : {
+                "distmod" : "2008plus-ssl",
+                "distarch" : "x86_64",
+                "cc" : "cl: Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24223 for x64",
+                "ccflags" : "/nologo /EHsc /W3 /wd4355 /wd4800 /wd4267 /wd4244 /wd4290 /wd4068 /wd4351 /wd4373 /we4013 /we4099 /we4930 /WX /errorReport:none /MD /O2 /Oy- /bigobj /utf-8 /Zc:rvalueCast /Zc:strictStrings /volatile:iso /Gw /Gy /Zc:inline",
+                "cxx" : "cl: Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24223 for x64",
+                "cxxflags" : "/TP",
+                "linkflags" : "/nologo /DEBUG /INCREMENTAL:NO /LARGEADDRESSAWARE /OPT:REF",
+                "target_arch" : "x86_64",
+                "target_os" : "windows"
+        },
+        "bits" : 64,
+        "debug" : false,
+        "maxBsonObjectSize" : 16777216,
+        "storageEngines" : [
+                "devnull",
+                "ephemeralForTest",
+                "mmapv1",
+                "wiredTiger"
+        ],
+        "ok" : 1
+}
+> db.serverBuildInfo().version
+4.0.22
+> use test
+switched to db test
+> db.createUser({user:"naman2",pwd:"naman2",roles:[{role: "readWrite",db:"test"}]})
+Successfully added user: {
+        "user" : "naman2",
+        "roles" : [
+                {
+                        "role" : "readWrite",
+                        "db" : "test"
+                }
+        ]
+}
+> db.getRoles();
+[ ]
+> db.getUsers();
+[
+        {
+                "_id" : "test.naman2",
+                "userId" : UUID("e815a3d8-9481-4799-8cf8-efdd97c6907b"),
+                "user" : "naman2",
+                "db" : "test",
+                "roles" : [
+                        {
+                                "role" : "readWrite",
+                                "db" : "test"
+                        }
+                ],
+                "mechanisms" : [
+                        "SCRAM-SHA-1",
+                        "SCRAM-SHA-256"
+                ]
+        }
+]
+> db.adminCommand({shutdown:1})
+{
+        "ok" : 0,
+        "errmsg" : "not authorized on admin to execute command { shutdown: 1.0, lsid: { id: UUID(\"86f7af18-06ba-473a-9892-b43db27389ba\") }, $db: \"admin\" }",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}
+> use admin
+switched to db admin
+> db.adminCommand({shutdown:1})
+{
+        "ok" : 0,
+        "errmsg" : "not authorized on admin to execute command { shutdown: 1.0, lsid: { id: UUID(\"86f7af18-06ba-473a-9892-b43db27389ba\") }, $db: \"admin\" }",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}
+> db.auth("naman","naman")
+1
+> db.adminCommand({shutdown:1})
+{
+        "ok" : 0,
+        "errmsg" : "not authorized on admin to execute command { shutdown: 1.0, lsid: { id: UUID(\"86f7af18-06ba-473a-9892-b43db27389ba\") }, $db: \"admin\" }",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}
+> db.grantRolesToUser("naman",[{role:"root",db:"admin"}])
+> db.grantRolesToUser("naman",[{role:"root",db:"admin"}])
+> db.auth("naman","naman")
+1
+> db.adminCommand({shutdown:1})
+2022-03-23T21:46:54.510+0530 I NETWORK  [js] DBClientConnection failed to receive message from 127.0.0.1:28002 - HostUnreachable: Connection reset by peer
+2022-03-23T21:46:54.510+0530 E QUERY    [js] Error: error doing query: failed: network error while attempting to run command 'shutdown' on host '127.0.0.1:28002'  :
+DB.prototype.runCommand@src/mongo/shell/db.js:168:1
+DB.prototype.adminCommand@src/mongo/shell/db.js:185:1
+@(shell):1:1
+2022-03-23T21:46:54.515+0530 I NETWORK  [js] trying reconnect to 127.0.0.1:28002 failed
+2022-03-23T21:46:56.553+0530 I NETWORK  [js] reconnect 127.0.0.1:28002 failed failed
+> show dbs;
+2022-03-23T21:47:45.279+0530 I NETWORK  [js] trying reconnect to 127.0.0.1:28002 failed
+2022-03-23T21:47:47.323+0530 I NETWORK  [js] reconnect 127.0.0.1:28002 failed failed
+2022-03-23T21:47:47.327+0530 I NETWORK  [js] trying reconnect to 127.0.0.1:28002 failed
+2022-03-23T21:47:49.372+0530 I NETWORK  [js] reconnect 127.0.0.1:28002 failed failed
+2022-03-23T21:47:49.373+0530 E QUERY    [js] Error: socket exception [CONNECT_ERROR] server [couldn't connect to server 127.0.0.1:28002, connection attempt failed: SocketException: Error connecting to 127.0.0.1:28002 :: caused by :: No connection could be made because the target machine actively refused it.] :
+runClientFunctionWithRetries@src/mongo/shell/session.js:349:27
+runCommand@src/mongo/shell/session.js:443:25
+DB.prototype._runCommandImpl@src/mongo/shell/db.js:145:16
+DB.prototype.runCommand@src/mongo/shell/db.js:161:20
+Mongo.prototype.adminCommand@src/mongo/shell/mongo.js:164:12
+Mongo.prototype.getDBs@src/mongo/shell/mongo.js:121:17
+shellHelper.show@src/mongo/shell/utils.js:882:13
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+> ^C
+bye
+2022-03-23T21:48:06.605+0530 I NETWORK  [js] trying reconnect to 127.0.0.1:28002 failed
+2022-03-23T21:48:08.620+0530 I NETWORK  [js] reconnect 127.0.0.1:28002 failed failed
+2022-03-23T21:48:08.621+0530 I QUERY    [js] Failed to end session { id: UUID("86f7af18-06ba-473a-9892-b43db27389ba") } due to SocketException: socket exception [CONNECT_ERROR] server [couldn't connect to server 127.0.0.1:28002, connection attempt failed: SocketException: Error connecting to 127.0.0.1:28002 :: caused by :: No connection could be made because the target machine actively refused it.]
+
+C:\Users\naman.jain>mongo --port 28002
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+2022-03-23T21:48:22.837+0530 E QUERY    [js] Error: couldn't connect to server 127.0.0.1:28002, connection attempt failed: SocketException: Error connecting to 127.0.0.1:28002 :: caused by :: No connection could be made because the target machine actively refused it. :
+connect@src/mongo/shell/mongo.js:356:17
+@(connect):2:6
+exception: connect failed
+
+C:\Users\naman.jain>mongo --port 28002
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b6a79374-0ad5-4a0e-a8bb-4fd14138cc75") }
+MongoDB server version: 4.0.22
+> show dbs;
+> use admin
+switched to db admin
+> use test
+switched to db test
+> use test
+switched to db test
+> db.example.insert({A:2})
+WriteCommandError({
+        "ok" : 0,
+        "errmsg" : "command insert requires authentication",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+})
+> db.auth("naman2","naman2")
+1
+> db.example.insert({A:2})
+WriteResult({ "nInserted" : 1 })
+> db.getUsers();
+2022-03-23T21:51:38.487+0530 E QUERY    [js] Error: not authorized on test to execute command { usersInfo: 1.0, lsid: { id: UUID("b6a79374-0ad5-4a0e-a8bb-4fd14138cc75") }, $db: "test" } :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1786:1
+@(shell):1:1
+> db.getUser()
+2022-03-23T21:52:01.219+0530 E QUERY    [js] Error: User name for getUser shell helper must be a string :
+DB.prototype.getUser@src/mongo/shell/db.js:1758:1
+@(shell):1:1
+> db.getUsers()
+2022-03-23T21:52:06.618+0530 E QUERY    [js] Error: not authorized on test to execute command { usersInfo: 1.0, lsid: { id: UUID("b6a79374-0ad5-4a0e-a8bb-4fd14138cc75") }, $db: "test" } :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1786:1
+@(shell):1:1
+> db.getUsers()
+2022-03-23T21:52:47.180+0530 E QUERY    [js] Error: not authorized on test to execute command { usersInfo: 1.0, lsid: { id: UUID("b6a79374-0ad5-4a0e-a8bb-4fd14138cc75") }, $db: "test" } :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1786:1
+@(shell):1:1
+> db.getCollectionInfos()
+[
+        {
+                "name" : "example",
+                "type" : "collection",
+                "options" : {
+
+                },
+                "info" : {
+                        "readOnly" : false,
+                        "uuid" : UUID("0cf04a83-dd3b-47b2-bd75-01666cf75ff1")
+                },
+                "idIndex" : {
+                        "v" : 2,
+                        "key" : {
+                                "_id" : 1
+                        },
+                        "name" : "_id_",
+                        "ns" : "test.example"
+                }
+        }
+]
+> db.auth("naman","naman")
+Error: Authentication failed.
+0
+> use admin
+switched to db admin
+> db.auth("naman","naman")
+1
+> use test
+switched to db test
+> db.getUsers()
+2022-03-23T21:53:57.263+0530 E QUERY    [js] Error: logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods) :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1786:1
+@(shell):1:1
+> db.getRole("userAdminAnyDatabase")
+2022-03-23T21:55:07.928+0530 E QUERY    [js] Error: logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods) :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getRole@src/mongo/shell/db.js:1904:1
+@(shell):1:1
+> db.getRole("root")
+2022-03-23T21:55:15.824+0530 E QUERY    [js] Error: logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods) :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getRole@src/mongo/shell/db.js:1904:1
+@(shell):1:1
+> db.getRole("root")
+2022-03-23T21:55:44.741+0530 E QUERY    [js] Error: logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods) :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getRole@src/mongo/shell/db.js:1904:1
+@(shell):1:1
+> db.getRole("root")
+2022-03-23T21:55:46.504+0530 E QUERY    [js] Error: logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods) :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getRole@src/mongo/shell/db.js:1904:1
+@(shell):1:1
+> db.getUsers()
+2022-03-23T21:55:53.543+0530 E QUERY    [js] Error: logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods) :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1786:1
+@(shell):1:1
+> db.getUsers()
+2022-03-23T21:56:07.186+0530 E QUERY    [js] Error: logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods) :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.getUsers@src/mongo/shell/db.js:1786:1
+@(shell):1:1
+> db.admiWarning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+  db.adminCommand(
+...
+...
+> db.adminCommand({shutdown:1})
+{
+        "ok" : 0,
+        "errmsg" : "logical sessions can't have multiple authenticated users (for more details see: https://docs.mongodb.com/manual/core/authentication/#authentication-methods)",
+        "code" : 13,
+        "codeName" : "Unauthorized"
+}
+> ^C
+bye
+
+C:\Users\naman.jain>mongo --port 28002
+MongoDB shell version v4.0.22
+connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("7cf60849-b4f9-469a-8456-6cd1cec44d4e") }
+MongoDB server version: 4.0.22
+> use admin
+switched to db admin
+> db.auth("naman","nama")
+Error: Authentication failed.
+0
+> db.auth("naman","naman")
+1
+> use test
+switched to db test
+> db.getUsers();
+[
+        {
+                "_id" : "test.naman2",
+                "userId" : UUID("e815a3d8-9481-4799-8cf8-efdd97c6907b"),
+                "user" : "naman2",
+                "db" : "test",
+                "roles" : [
+                        {
+                                "role" : "readWrite",
+                                "db" : "test"
+                        }
+                ],
+                "mechanisms" : [
+                        "SCRAM-SHA-1",
+                        "SCRAM-SHA-256"
+                ]
+        }
+]
+> use admin
+switched to db admin
+> ^C
+bye
+
+C:\Users\naman.jain>
+
+C:\Users\naman.jain>
+
+C:\Users\naman.jain>Microsoft Windows [Version 10.0.19044.1586]                                                                                                                                 (c) Microsoft Corporation. All rights reserved.                                                                                                                                                                                                                                                                                                         C:\Users\naman.jain>mongo --port 28002                                                                                                                                      MongoDB shell version v4.0.22                                                                                                                                               connecting to: mongodb://127.0.0.1:28002/?gssapiServiceName=mongodb                                                                                                         Implicit session: session { "id" : UUID("ec871f85-092e-4257-a2d7-96a6059c9271") }                                                                                           MongoDB server version: 4.0.22                                                                                                                                              Server has startup warnings:                                                                                                                                                2022-03-23T15:35:55.231+0530 I CONTROL  [initandlisten]                                                                                                                     2022-03-23T15:35:55.231+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.                                                         2022-03-23T15:35:55.232+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.                                        2022-03-23T15:35:55.233+0530 I CONTROL  [initandlisten]                                                                                                                     2022-03-23T15:35:55.235+0530 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.                                                                      2022-03-23T15:35:55.239+0530 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server.                                                2022-03-23T15:35:55.240+0530 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP                                           2022-03-23T15:35:55.241+0530 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to                                      2022-03-23T15:35:55.241+0530 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the                                          2022-03-23T15:35:55.242+0530 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.                                                2022-03-23T15:35:55.243+0530 I CONTROL  [initandlisten]                                                                                                                     ---                                                                                                                                                                         Enable MongoDB's free cloud-based monitoring service, which will then receive and display                                                                                   metrics about your deployment (disk utilization, CPU, operation statistics, etc).                                                                                                                                                                                                                                                                       The monitoring data will be available on a MongoDB website with a unique URL accessible to you                                                                              and anyone you share the URL with. MongoDB may use this information to make product                                                                                         improvements and to suggest MongoDB products and deployment options to you.                                                                                                                                                                                                                                                                             To enable free monitoring, run the following command: db.enableFreeMonitoring()                                                                                             To permanently disable this reminder, run the following command: db.disableFreeMonitoring()                                                                                 ---                                                                                                                                                                                                                                                                                                                                                     > show dbs;                                                                                                                                                                 admin   0.000GB                                                                                                                                                             config  0.000GB                                                                                                                                                             local   0.000GB                                                                                                                                                             > use naman                                                                                                                                                                 switched to db naman                                                                                                                                                        > db;                                                                                                                                                                       naman                                                                                                                                                                       > db.showCollectionInfos();                                                                                                                                                 2022-03-23T15:37:18.600+0530 E QUERY    [js] TypeError: db.showCollectionInfos is not a function :                                                                          @(shell):1:1                                                                                                                                                                > db.help();                                                                                                                                                                DB methods:                                                                                                                                                                         db.adminCommand(nameOrDocument) - switches to 'admin' db, and runs command [just calls db.runCommand(...)]                                                                  db.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor                                                              db.auth(username, password)

@@ -1,0 +1,299 @@
+#for using regex for queriying string like LIKE operator in sql
+db.getCollection('users').find({first_name : { $regex:/^FA/, $options: 'im' }});
+# for using the $exists command 
+
+db.getCollection('business_info').find({flipkart_app_id : {$exists : true}})
+
+
+## for updating array of objects
+
+-->https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/write-operations/embedded-arrays/#std-label-all-match-operator
+	
+	--> To perform an update on all embedded array elements of each document that matches your query, use the filtered positional operator $[<identifier>]. like used in the following. 
+		-->db.getCollection('bulk_docs').update({},{$set : {"data.$[doc].product_opportunity_id" : "SKbZDloB"}},{multi: true,arrayFilters : [{ "doc.product_opportunity_id": "n1zfjm47"}]})
+
+## for connecting remotely through shell using authentication 
+
+-->mongo --host 3.111.204.47 --port 8001 -u madhur.tandon -p cu38dhjahe372yTR
+
+
+## for creating sparse index on specific field in document of any collection.
+
+1)db.scores.createIndex( { score: 1 } , { sparse: true } )
+  ## for using the sparse index in query by specifying explicitly
+	2) db.collection.find().hint( { score: 1 } ).count();
+  ## by default very first sparse index on a specific field will be used automatically in find queries in a same manner as it works with other indexes.
+	3) db.scores.find( { score: { $lt: 90 } } )
+  ##Sparse indexes only contain entries for documents that have the indexed field, even if the index field contains a null value. The index skips over any document that is missing the indexed field. The index is "sparse" because it does not include all documents of a collection. By contrast, non-sparse indexes contain all documents in a collection, storing null values for those documents that do not contain the indexed field.
+
+2)For dropping or removing the created index.
+  ##db.test.dropIndex("a_1")
+         or
+  ## db.test.dropIndex({a:1})
+
+
+3) For converting integer timestamp in miiliseconds to date in mogodb.
+ ##db.getCollection('data-request-mappings').aggregate([{$addFields:{created_at: {$convert:{input:"$created_a", to: "double", onNull:"null value" }}}},{$addFields:{created_at: {$convert:{input:"$created_at", to: "date",onError : "Error occurred"}}}}])
+ --> In this first we have to convert integer timestamp to double or long type then only we can convert them to date type. we cannot directly convert integer type timestamp to date type.    
+
+4) for adding fields in input documents with names that contain periods (.) or start with dollar signs ($) in the aggregation operation. We can can also use $addFields stage but this stage will not add in the input documents the fields with names that contain periods (.) or start with dollar signs ($) during aggregation operation. 
+   -->https://www.mongodb.com/docs/manual/reference/operator/aggregation/setField/
+
+5) Query to convert seconds into milliseconds and then conververing into date and projecting year and minutes of that date object into local timezone.
+db.getCollection('req_res_logs').aggregate([{$addFields : {created_at : {$multiply :["$created_at",1000]}}},{$addFields : {created_at : {$convert:{input: "$created_at", to : "double",onError : 3}}}},{$addFields : {created_at : {$convert:{input: "$created_at", to : "date",onError : 3}}}},{$project : {year : {$year : "$created_at"},hour : {$hour : {date : "$created_at", timezone : "+0530"}},minute : {$minute : {date : "$created_at",timezone : "+0530"}}}}])
+
+6) for removing fields in input documents with names that contain periods (.) or start with dollar signs ($) in the aggregation operation. We can can also use $addFields stage but this stage will not add in the input documents the fields with names that contain periods (.) or start with dollar signs ($) during aggregation operation. 
+   -->https://www.mongodb.com/docs/v6.0/reference/operator/aggregation/unsetField/
+
+## for seaching on the basis of re=gular expression
+1) the foolowing query will match the documents in users collection in which username field should start with characters in range[H-Jh-j] and end with character "h" and can contain any no. of letters in between.
+db.getCollection('users').find({username: /^[H-Jh-j].+h$/});
+   
+
+## from mongo shell executing the js fragment
+--> mongo test --eval "printjson(db.getCollectionNames())"
+This will returns the output of db.getCollectionNames() using the mongo shell connected to the mongod or mongos instance running on port 27017 on the localhost interface.
+
+
+## cursor commands.
+-->var cursor = db.getCollection('data-request-mappings').find({});
+cursor.count();
+cursor.next();
+cursor.hasNext();
+cursor.next();
+
+
+
+## for getting documents in more readable format in mongo shell
+-->db.getCollection("data-request-mappings").find({}).pretty()
+
+## for getting all documents as an Array;
+-->db.getCollection("data-request-mappings").find({}).toArray();
+
+## Using pritJson in mongo shell ;
+
+var dataArray= db.getCollection('data-request-mappings').find().toArray();
+if (dataArray.length > 0) { printjson (dataArray[0]); }
+
+## save method on collection performs both insertion and update of documents.
+   The save() method uses either the insert or the update command,
+   The save() returns an object that contains the status of the operation.
+   --> for reference https://www.mongodb.com/docs/v4.2/reference/method/db.collection.save/ 
+  examples-->
+
+db.people.find({})
+{ "_id" : ObjectId("63c004763bc58e67b976af88"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63c006798bb52fa0501f0c5f"), "a" : 34, "b" : 78 }
+> db.people.save({a:34})
+WriteResult({ "nInserted" : 1 })
+> db.people.find({})
+{ "_id" : ObjectId("63c004763bc58e67b976af88"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63c006798bb52fa0501f0c5f"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63dba640dc8c0ee3dc546961"), "a" : 34 }
+> db.people.save({_id:"1", s:2})
+WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : "1" })
+> db.people.find({})
+{ "_id" : ObjectId("63c004763bc58e67b976af88"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63c006798bb52fa0501f0c5f"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63dba640dc8c0ee3dc546961"), "a" : 34 }
+{ "_id" : "1", "s" : 2 }
+> db.people.save({_id:1, s:2})
+WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : 1 })
+> db.people.find({})
+{ "_id" : ObjectId("63c004763bc58e67b976af88"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63c006798bb52fa0501f0c5f"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63dba640dc8c0ee3dc546961"), "a" : 34 }
+{ "_id" : "1", "s" : 2 }
+{ "_id" : 1, "s" : 2 }
+> db.people.save({_id:1, e:2,h:5})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.people.find({})
+{ "_id" : ObjectId("63c004763bc58e67b976af88"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63c006798bb52fa0501f0c5f"), "a" : 34, "b" : 78 }
+{ "_id" : ObjectId("63dba640dc8c0ee3dc546961"), "a" : 34 }
+{ "_id" : "1", "s" : 2 }
+{ "_id" : 1, "e" : 2, "h" : 5 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## $bucket stage in mongodb
+-->Categorizes incoming documents into groups, called buckets, based on a specified expression and bucket boundaries and outputs a document per each bucket. Each output document contains an _id field whose value specifies the inclusive lower bound of the bucket. The 
+-->output option specifies the fields included in each output document.
+-->$bucket only produces output documents for buckets that contain at least one input document.
+
+example -->
+
+db.artists.insertMany([
+  { "_id" : 1, "last_name" : "Bernard", "first_name" : "Emil", "year_born" : 1868, "year_died" : 1941, "nationality" : "France" },
+  { "_id" : 2, "last_name" : "Rippl-Ronai", "first_name" : "Joszef", "year_born" : 1861, "year_died" : 1927, "nationality" : "Hungary" },
+  { "_id" : 3, "last_name" : "Ostroumova", "first_name" : "Anna", "year_born" : 1871, "year_died" : 1955, "nationality" : "Russia" },
+  { "_id" : 4, "last_name" : "Van Gogh", "first_name" : "Vincent", "year_born" : 1853, "year_died" : 1890, "nationality" : "Holland" },
+  { "_id" : 5, "last_name" : "Maurer", "first_name" : "Alfred", "year_born" : 1868, "year_died" : 1932, "nationality" : "USA" },
+  { "_id" : 6, "last_name" : "Munch", "first_name" : "Edvard", "year_born" : 1863, "year_died" : 1944, "nationality" : "Norway" },
+  { "_id" : 7, "last_name" : "Redon", "first_name" : "Odilon", "year_born" : 1840, "year_died" : 1916, "nationality" : "France" },
+  { "_id" : 8, "last_name" : "Diriks", "first_name" : "Edvard", "year_born" : 1855, "year_died" : 1930, "nationality" : "Norway" }
+])
+
+db.artists.aggregate( [
+  // First Stage
+  {
+    $bucket: {
+      groupBy: "$year_born",                        // Field to group by
+      boundaries: [ 1840, 1850, 1860, 1870, 1880 ], // Boundaries for the buckets
+      default: "Other",                             // Bucket ID for documents which do not fall into a bucket
+      output: {                                     // Output for each bucket
+        "count": { $sum: 1 },
+        "artists" :
+          {
+            $push: {
+              "name": { $concat: [ "$first_name", " ", "$last_name"] },
+              "year_born": "$year_born"
+            }
+          }
+      }
+    }
+  }
+] )
+
+
+-->output 
+
+{ "_id" : 1840, "count" : 1, "artists" : [ { "name" : "Odilon Redon", "year_born" : 1840 } ] }
+{ "_id" : 1850, "count" : 2, "artists" : [ { "name" : "Vincent Van Gogh", "year_born" : 1853 },
+                                           { "name" : "Edvard Diriks", "year_born" : 1855 } ] }
+{ "_id" : 1860, "count" : 4, "artists" : [ { "name" : "Emil Bernard", "year_born" : 1868 },
+                                           { "name" : "Joszef Rippl-Ronai", "year_born" : 1861 },
+                                           { "name" : "Alfred Maurer", "year_born" : 1868 },
+                                           { "name" : "Edvard Munch", "year_born" : 1863 } ] }
+{ "_id" : 1870, "count" : 1, "artists" : [ { "name" : "Anna Ostroumova", "year_born" : 1871 } ] }
+
+
+---->description
+
+The $bucket stage groups the documents into buckets by the year_born field. The buckets have the following 
+boundaries:
+
+[1840, 1850) with inclusive lowerbound 1840 and exclusive upper bound 1850.
+
+[1850, 1860) with inclusive lowerbound 1850 and exclusive upper bound 1860.
+
+[1860, 1870) with inclusive lowerbound 1860 and exclusive upper bound 1870.
+
+[1870, 1880) with inclusive lowerbound 1870 and exclusive upper bound 1880.
+
+If a document did not contain the year_born field or its year_born field was outside the ranges above, it would be placed in the 
+default bucket with the _id value "Other".
+The stage includes the output document to determine the fields to return:
+
+--->Behavior
+$bucket requires at least one of the following conditions to be met or the operation throws an error:
+Each input document resolves the groupBy expression to a value within one of the bucket ranges specified by boundaries, or A default value is specified to bucket documents whose groupBy values are outside of the boundaries or of a different BSON type than the values in boundaries.
+If the groupBy expression resolves to an array or a document, $bucket arranges the input documents into buckets using the comparison logic from $sort.
+
+
+
+## for getting the collection stats.
+--> db.getCollection('test').stats({indexDetails : true});
+
+## for not operators
+-->db.getCollection('applications').find({statusId : {$not : {$eq : "62317b63d917842131a11ef4"}}}).count()
+
+## using findAndModify command
+db.getCollection('people').findAndModify({query : {n:4},remove : true,sort : {_id : -1},new : false});
+
+## To get overall collection stats using aggregate
+-->db.getCollection('applications').aggregate([{$collStats : {latencyStats : {histograms : true},storageStats : {scale:1024},count : {},}}]);
+
+--> doc link
+https://www.mongodb.com/docs/manual/reference/operator/aggregation/collStats/
+
+## $facet in mongodb description
+-->link
+https://medium.com/@aviksingha2017/a-different-approach-towards-mongodb-facet-eb65bbddd090
+
+
+## Ifnull in mongodb description 
+--> link
+https://www.mongodb.com/docs/v7.0/reference/operator/aggregation/ifNull/
+
+
+## sortByCount in mongodb description
+
+$sortByCount
+Groups incoming documents based on the value of a specified expression, then computes the count of documents in each distinct group.
+
+Each output document contains two fields: an _id field containing the distinct grouping value, and a count field containing the number of documents belonging to that grouping or category.
+
+The documents are sorted by count in descending order.
+
+The $sortByCount stage has the following prototype form:
+
+-->{ $sortByCount:  <expression> }
+-->Link
+https://www.mongodb.com/docs/manual/reference/operator/aggregation/sortByCount/
+
+## Facet in mongodb description
+
+$facet
+Processes multiple aggregation pipelines within a single stage on the same set of input documents. Each sub-pipeline has its own field in the output document where its results are stored as an array of documents.
+
+The $facet stage allows you to create multi-faceted aggregations which characterize data across multiple dimensions, or facets, within a single aggregation stage. Multi-faceted aggregations provide multiple filters and categorizations to guide data browsing and analysis. Retailers commonly use faceting to narrow search results by creating filters on product price, manufacturer, size, etc.
+
+Input documents are passed to the $facet stage only once. $facet enables various aggregations on the same set of input documents, without needing to retrieve the input documents multiple times.
+
+-->The $facet stage has the following form:
+
+{ $facet:
+   {
+      <outputField1>: [ <stage1>, <stage2>, ... ],
+      <outputField2>: [ <stage1>, <stage2>, ... ],
+      ...
+   }
+}
+
+Specify the output field name for each specified pipeline.
+
+--> Considerations:
+As each stage in a $facet executes, the resulting document is limited to 100 megabytes. Note the allowDiskUse flag doesn't affect the 100 megabyte size limit, since $facet can't spill to disk.
+
+The final output document is subject to the 16 megabyte BSON document size limit. If it exceeds 16 megabytes, the aggregation produces an error.
+
+--> Link
+https://www.mongodb.com/docs/manual/reference/operator/aggregation/facet/
+
+-->example
+db.getCollection('applications').aggregate([
+  {
+    $match: {
+      isDeleted: false
+    }
+  },
+  {
+    $facet: {
+      status: [
+        {$sortByCount : "$statusId"}
+      ],
+      totalCount: [
+        {
+          $count: "total_app"
+        },
+        
+      ],
+      
+    },
+    
+  },
+  
+]);

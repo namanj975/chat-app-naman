@@ -1,0 +1,282 @@
+
+#### When condition validation
+url- https://joi.dev/api/?v=17.9.1#anywhencondition-options
+
+
+------>schema
+Joi.object({
+    a: Joi.number().required(),
+    b: Joi.number()
+        .when('a', {
+            switch: [
+                { is: 0, then: Joi.valid(1) },
+                { is: 1, then: Joi.valid(2) },
+                { is: 2, then: Joi.valid(3).required() }
+            ],
+            otherwise: Joi.valid(4)
+        })
+})
+
+
+------>schema 
+//Insert your joi schema here 
+Joi.object({
+    min: Joi.number(),
+    max: Joi.number().when('min', {
+        is: Joi.number().required(),
+        then: Joi.number().greater(Joi.ref('min')),
+    }),
+})
+
+-----> schema
+//Insert your joi schema here 
+Joi.object({
+    a: Joi.any().valid('x'),
+    b: Joi.any()
+})
+    .when(Joi.object({ b: Joi.exist() }).unknown(), {
+        then: Joi.object({
+            a: Joi.valid('y').required()
+        }),
+        otherwise: Joi.object({
+            a: Joi.valid('z')
+        })
+}).unknown()
+
+
+--->schema
+Joi.object({
+    type: Joi.string()
+        .valid('A', 'B', 'C')
+        .required(),              // required if type == 'A'
+        
+    foo: Joi.when('type', {
+        is: 'A',
+        then: Joi.string()
+        .valid('X', 'Y', 'Z')
+        .required()
+    }),                           // required if type === 'A' and foo !== 'Z'
+    
+    bar: Joi.string()
+})
+    .when(Joi.object({ type: Joi.valid('A'), foo: Joi.not('Z') }).unknown(), {
+        then: Joi.object({ bar: Joi.required() })
+    })
+
+
+
+
+
+
+
+
+
+
+
+## forbidden condition
+Marks a key as forbidden which will not allow any value except undefined. Used to explicitly forbid keys.
+
+
+Joi.object({
+    a: Joi.forbidden(),
+    b: Joi.any()
+})
+
+
+
+
+
+## date validations
+-->Generates a schema object that matches a date type (as well as a JavaScript date string or number of milliseconds).
+ If the validation convert option is on (enabled by default), a string or number will be converted to a Date if specified.
+
+---> provided date must be less than current date
+	Specifies that the value must be less than date
+	schema--
+Joi.object({
+  a: Joi.date().less('now')
+})
+
+---> for provided date must be in correct ISO format
+	Joi.object({
+  		a: Joi.date().iso()
+	})
+	example1
+	 // below will be valid if convert option while validation is true(it is true by default)
+	{ 
+ 		a: "2021-12-06"     
+	}
+
+
+## string token validations
+-->schema
+Joi.object({
+  a: Joi.string().token().required()
+})
+
+-->in the above the key "a" must only contain alpha-numeric and underscore characters.
+
+## string lowercase
+-->schema
+Joi.object({
+  a: Joi.string().lowercase()
+})
+
+--> Requires the string value to be all lowercase. If the validation convert option is on (enabled by default), then the string will be by default converted to lowercase else
+it will throw error.
+
+
+## Adding alternate schemas
+
+-->alternatives
+Generates a type that will match one of the provided alternative schemas via the try() method. If no schemas are added, the type will not match any value except for undefined.
+
+Supports the same methods of the any() type.
+
+Alternatives can be expressed using the shorter [] notation.
+
+const alt = Joi.alternatives().try(Joi.number(), Joi.string());
+// Same as [Joi.number(), Joi.string()]
+Note that numeric strings would be casted to numbers in the example above (see any.strict()).
+
+Possible validation errors: alternatives.any, alternatives.all, alternatives.one, alternatives.types, alternatives.match
+
+alternatives.conditional(condition, options)
+Adds a conditional alternative schema type, either based on another key value, or a schema peeking into the current value, where:
+
+condition - the key name or reference, or a schema.
+options - an object with:
+is - the condition expressed as a joi schema. Anything that is not a joi schema will be converted using Joi.compile.
+not - the negative version of is (then and otherwise have reverse roles).
+then - if the condition is true, the joi schema to use.
+otherwise - if the condition is false, the joi schema to use.
+switch - an array of { is, then } conditions that are evaluated against the condition. The last item in the array may also contain otherwise.
+If condition is a reference:
+
+if is, not, and switch are missing, is defaults to Joi.invalid(null, false, 0, '').required() (value must be a truthy).
+is and not cannot be used together.
+one of then, otherwise, or switch is required.
+cannot use is or then with switch.
+cannot specify otherwise both inside the last switch statement and outside.
+If condition is a schema:
+
+cannot specify is or switch.
+one of then or otherwise is required.
+When is, then, or otherwise are assigned literal values, the values are compiled into override schemas ('x' is compiled into Joi.valid(Joi.override, 'x')). This means they will override any base schema the rule is applied to. To append a literal value, use the explicit Joi.valid('x') format.
+
+Note that alternatives.conditional() is different than any.when(). When you use any.when() you end up with composite schema of all the matching conditions while alternatives.conditional() will use the first matching schema, ignoring other conditional statements.
+
+const schema = {
+    a: Joi.alternatives().conditional('b', { is: 5, then: Joi.string(), otherwise: Joi.number() }),
+    b: Joi.any()
+};
+const schema = Joi.alternatives().conditional(Joi.object({ b: 5 }).unknown(), {
+    then: Joi.object({
+        a: Joi.string(),
+        b: Joi.any()
+    }),
+    otherwise: Joi.object({
+        a: Joi.number(),
+        b: Joi.any()
+    })
+});
+Import to joi Schema Tester
+Note that conditional() only adds additional alternatives to try and does not impact the overall type. Setting a required() rule on a single alternative will not apply to the overall key. For example, this definition of a:
+
+const schema = {
+    a: Joi.alternatives().conditional('b', { is: true, then: Joi.required() }),
+    b: Joi.boolean()
+};
+Does not turn a into a required key when b is true. Instead, it tells the validator to try and match the value to anything that's not undefined. However, since Joi.alternatives() by itself allows undefined, the rule does not accomplish turning a to a required value. This rule is the same as Joi.alternatives([Joi.required()]) when b is true which will allow any value including undefined.
+
+To accomplish the desired result above use:
+
+const schema = {
+    a: Joi.when('b', { is: true, then: Joi.required() }),
+    b: Joi.boolean()
+};
+
+--> schema
+//Insert your joi schema here 
+Joi.object({
+  a: Joi.alternatives().conditional(Joi.object({ b: 5 }).unknown(true), {
+    then: Joi.object({
+        a: Joi.string(),
+        b: Joi.any()
+    }),
+    otherwise: Joi.object({
+        a: Joi.boolean(),
+        b: Joi.any()
+    })
+}),
+z:Joi.alternatives().try(Joi.number(), Joi.string())
+})
+
+
+## schema valid and invalid functions
+
+-->schema
+Joi.object({
+  first_name: Joi.string().invalid('a').invalid(Joi.override,'b').note('this is special', 'this is important').label('First Names').required(),
+a: Joi.string().valid('a').valid(Joi.override).allow(1,2).label("field a").required()
+})
+
+--> sample data 1
+	{ first_name : "dd",
+		a: "3"
+	}
+	--> validation passed
+-->sample data 2
+ //Insert data to validate here 
+	{ 
+	first_name: "dd",
+	a: 3
+ 	}
+	--> Validation Error: "field a" must be a string
+
+
+## schema allow method
+
+--> schema
+Joi.object({
+  first_name: Joi.string().invalid('a').invalid(Joi.override,'b').note('this is special', 'this is important').label('First Names').required(),
+a: Joi.string().valid('a').valid(Joi.override).allow(1,2).label("field a").required(),
+b: Joi.number().allow('b', 'B').label('field b').required()
+})
+
+--> sample data 1
+ { first_name : "dd",
+a: "3",
+b : 3
+}
+  -- > validation passed
+
+--> sample data 2
+	//Insert data to validate here 
+{ first_name : "dd",
+a: "3",
+b : "B"
+ 
+}
+
+  --> validation passed
+
+--> sample data 3
+//Insert data to validate here 
+{ first_name : "dd",
+a: "3",
+b : "b"
+ 
+}
+
+--> validation passed
+
+--> sample data 4
+ //Insert data to validate here 
+{ first_name : "dd",
+a: "3",
+b : "v"
+ 
+}
+
+--> Validation Error: "field b" must be a number must be a number

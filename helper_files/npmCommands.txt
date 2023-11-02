@@ -1,0 +1,67 @@
+## for installing the package as alias
+syntax : npm install <alias>@npm:<name>
+npm install mongoose5@npm:mongoose@5 -D
+
+
+## to add user or sighnup on new machine 
+
+* npm adduser
+* npm login - for user login
+* npm logout - for user logout
+
+## for publishing the package to npm registry
+
+* npm publish <package link or run in package root diretory>
+
+## for getting the user profile details on npm
+
+* npm profile get <key name like email> - make sure that user is already loin on the machine on which you are searching.
+
+
+## For setting the environment variables and then running the npm install command
+
+
+When the NODE_ENV environment variable is set to 'production' all devDependencies in your package.json file will be completely ignored when running npm install. You can also enforce this with a --production flag:
+
+npm install --production
+For setting NODE_ENV you can use any of these methods
+
+method 1: set NODE_ENV for all node apps
+
+Windows :
+
+-->set NODE_ENV=production
+Linux, macOS or other unix based system :
+
+export NODE_ENV=production
+This sets NODE_ENV for current bash session thus any apps started after this statement will have NODE_ENV set to production.
+
+method 2: set NODE_ENV for current app
+
+-->NODE_ENV=production node app.js
+This will set NODE_ENV for the current app only. This helps when we want to test our apps on different environments.
+
+method 3: create .env file and use it
+
+This uses the idea explained here. Refer this post for more detailed explanation.
+
+Basically, you create a .env file and run some bash scripts to set them on the environment.
+
+To avoid writing a bash script, the env-cmd package can be used to load the environment variables defined in the .env file.
+
+-->env-cmd .env node app.js
+method 4: Use cross-env package
+
+This package allows environment variables to be set in one way for every platform.
+
+After installing it with npm, you can just add it to your deployment script in package.json as follows:
+
+-->"build:deploy": "cross-env NODE_ENV=production webpack"   
+
+method 5
+
+Most elegant and portable solution: package.json:
+
+-->"scripts": {
+    "serve": "export NODE_PRESERVE_SYMLINKS_MAIN=1 && vue-cli-service serve"
+    },

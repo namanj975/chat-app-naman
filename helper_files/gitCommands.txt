@@ -1,0 +1,224 @@
+## For stashing and cleaning while switching through different branches
+
+1) git stash - (Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to work on something else. The problem is,
+		 you don’t want to do a commit of half-done work just so you can get back to this point later. The answer to this issue is the git stash command.)
+2) git stash list - (for listing all the stash with index).
+3) git stash apply - (for applying the latest stash on the current branch).
+4) git stash apply --index - (for applying the stash of particular index).
+5) git stash clear - (for clearing all stashes of code).
+6) git stash branch <new branchname> - (for creating the new brach with that stashed code).
+7) git stash pop - (same as command git stash apply but it  Remove a single stashed state from the stash list and apply it on top of the current working tree state. ).
+8)  git stash drop - (Remove a single stash entry (i.e at the top of stack list) from the list of stash entries.).
+9) git stash -p   or git stash push -p (for saving local modifications in patch to stash it enable us to save only those modifications which we want on the basis of file) 
+
+## for droping or deleting the stash entry at particuler index
+--> git stash drop stash@"{1}" // This will drop the stash entry at index 1
+
+## git branch reference 
+
+https://www.atlassian.com/git/tutorials/using-branches
+
+
+## to merge the code of specific branch in the current branch if both branches are separate and they have no common base
+
+1) git pull origin <specific branch name> ----allow-unrelated-histories
+2) then add the unstaged changes then commit 
+3) after that push the changes into the current branch 
+
+## for listing all the local and remote branches 
+
+1) git branch -a
+
+## for listing all local branches 
+
+1)  git branch
+
+## for listing only remote branches 
+
+1)  git branch -r
+
+## for renaming the current branch
+
+1) git branch -m "new branch name"
+
+## for creating the new branch
+
+1) git branch <new branch name> 
+
+## for creating the new branch and checkout to that branch
+
+1) git checkout -b <new branch 
+
+## To get list of all local branches which can be safely deleted, since those branches are fully merged or contained by HEAD.
+
+1) git branch --merged
+
+## To get list of all branches which are candidates for merging into HEAD(i.e unmerged branches), since those branches are not fully contained or merged by HEAD.
+
+1) git branch --no-merged
+
+## git reset commands
+
+https://devconnected.com/how-to-git-reset-to-head/
+
+
+
+## git remote commands
+
+https://www.atlassian.com/git/tutorials/syncing
+
+https://devconnected.com/how-to-change-git-remote-origin/
+
+## for creating the patch file 
+git diff origin/HI-5529-uat > D:/5529task.patch (where HI-5529-uat is remote branch from which the difference of current brach is created into the patch file)
+
+
+
+## for git reset documentation 
+
+
+https://git-scm.com/docs/git-reset
+
+git reset --soft HEAD^
+git reset --hard HEAD^
+git reset --hard HEAD~2
+##
+By default git checkout -b will base the new-branch off the current HEAD. An optional additional branch parameter can be passed to git checkout. In the above example, ＜existing-branch＞ is passed which then bases new-branch off of existing-branch instead of the current HEAD.
+
+git checkout -b ＜new-branch＞ ＜existing-branch＞
+
+
+
+## 
+For All the Commands Below
+The commands below assume you've navigated to the folder for the Git repo.
+
+See What Branch You're On
+Run this command:
+git status
+List All Branches
+NOTE: The current local branch will be marked with an asterisk (*).
+
+To see local branches, run this command:
+git branch
+To see remote branches, run this command:
+git branch -r
+To see all local and remote branches, run this command:
+git branch -a
+Create a New Branch
+Run this command (replacing my-branch-name with whatever name you want):
+git checkout -b my-branch-name
+You're now ready to commit to this branch.
+Switch to a Branch In Your Local Repo
+Run this command:
+git checkout my-branch-name
+Switch to a Branch That Came From a Remote Repo
+To get a list of all branches from the remote, run this command:
+git pull
+Run this command to switch to the branch:
+git checkout --track origin/my-branch-name
+Push to a Branch
+If your local branch does not exist on the remote, run either of these commands:
+git push -u origin my-branch-name
+git push -u origin HEAD
+NOTE: HEAD is a reference to the top of the current branch, so it's an easy way to push to a branch of the same name on the remote. This saves you from having to type out the exact name of the branch!
+
+If your local branch already exists on the remote, run this command:
+git push
+Merge a Branch
+You'll want to make sure your working tree is clean and see what branch you're on. Run this command:
+git status
+First, you must check out the branch that you want to merge another branch into (changes will be merged into this branch). If you're not already on the desired branch, run this command:
+git checkout master
+NOTE: Replace master with another branch name as needed.
+Now you can merge another branch into the current branch. Run this command:
+git merge my-branch-name
+NOTE: When you merge, there may be a conflict. Refer to Handling Merge Conflicts (the next exercise) to learn what to do.
+Delete Branches
+To delete a remote branch, run this command:
+-->git push origin --delete my-branch-name
+-->git branch -d -r origin/my-branch-name
+To delete a local branch, run either of these commands:
+git branch -d my-branch-name
+git branch -D my-branch-name
+NOTE: The -d option only deletes the branch if it has already been merged. The -D option is a shortcut for --delete --force, which deletes the branch irrespective of its merged status.
+
+##to get logs in single line
+git log dev --oneline     (for getting logs of dev branch)
+
+git log --oneline (for getting logs of current branch)
+
+## for setting the upstream tracking branch for currently local branch
+
+1) git push -u origin <branch name>
+2) git branch --set-upstream-to=origin/<branch name>
+
+## merge commit via git pull or git merge
+
+1)"When the merge resolves as a fast-forward, only update the branch pointer, without creating a merge commit. This is the default behavior." 
+2)"When the merge resolves as a recursive strategy, it updates the branch pointer, and creates a merge commit."
+
+## for setting the git config of user
+1)git config --local user.email "namanj975@gmail.com" (for local repo)
+2)git config --global user.email "namanj975@gmail.com"(for all repo at global lever)
+3)git config --system user.email "namanj975@gmail.com"(for all repo and all users at system level)
+
+when looking for a configuration value, Git will start at the local level and bubble up to the system level.
+
+## for listing all git configuration
+1) git config --list
+2) git config user.name (for getting only specific configuration)
+2) git config user.email (for getting only specific configuration)
+
+
+
+## steps for cloning any remote repo as bare and then making it a non bare local repo.
+
+1)clone a bare repo in that content, in a .git dir:
+  git clone --bare https://github.com/user/project .git
+2)Mark it as a non-bare repo:
+  git config --local --bool core.bare false
+3)reset the index (otherwise, it believes everything has been deleted, since a .git bare repo doesn't include a file 'index'.)
+  git reset HEAD --hard
+  That restores the .git/index.
+
+
+### when gitignore not works
+
+If the files you’re trying to ignore are already added to the repository, another thing you can do is remove everything from Git’s index cache memory and add everything back again. 
+then you are able to see that git ignore is working fine.
+Type the following commands in the Git terminal one by one and hit enter after each one.
+
+-->git rm -r --cached .;
+-->git add .;
+-->git commit -m "Untracked files issue resolved to fix .gitignore";
+
+
+## for unstaging all files which are already staged
+
+1) git restore --staged .
+2) git restore --staged <file path> (for unstaging the specific file) pass the file path like 'src/config/configuration.ts'
+3 ) git restore . (To restore all files in the current directory (i.e which are not staged))
+4) git restore :/<folder path>(To restore all files in the current directory (i.e which are not staged) in the specified path)
+5) git restore --staged --worktree . (To restore all files in the staged or working tree)
+6) git restore --staged --worktree <file path> (To restore specific files from both staged and working tree)
+
+
+
+## for modifying or changing the unpushed commit messages
+1)git commit --amend -m "New commit message"
+
+
+## For Renaming your local master branch into main with the following command
+
+1) git branch --move master main
+
+
+## For renaming forcefully the the default branch (master or any other) to main
+
+1) git branch -M main
+
+-->-M automatically renames the master branch to main.
+-->-M is a flag (shortcut) for --move --force per the docs page on git branch. 
+-->It renames the branch main (since the default branch name for repositories created using the command line is master, while those created in GitHub [starting in Oct. 2020] have a default name of main) and forces it (allows renaming of the branch even if the new branch name already exists).
+

@@ -1,0 +1,7 @@
+## with keyword in python
+-- > description link
+https://www.geeksforgeeks.org/with-statement-in-python/
+
+## __new__ method of classes in python
+-->description link
+https://www.geeksforgeeks.org/__new__-in-python/

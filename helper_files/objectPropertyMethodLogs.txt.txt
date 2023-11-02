@@ -1,0 +1,6569 @@
+var s = {
+    a:1,
+    b:3,
+    c:4}
+undefined
+s.hasOwnProperty("b")
+true
+s.hasOwnProperty("g")
+false
+s.__proto__.f = 5
+5
+s.f;
+5
+s.hasOwnProperty("f")
+false
+s.propertyIsEnumerable("b")
+true
+s.propertyIsEnumerable("f")
+false
+
+
+
+
+var o = {g:2}
+undefined
+o.__proto__ == Object.prototype;
+true
+o.__proto__.__proto__
+null
+o.filter;
+undefined
+Object.__proto__ == Function.prototype;
+true
+Object.__proto__.__proto__ == Object.prototype;
+true
+
+
+
+
+
+
+
+
+
+var a = {};
+undefined
+a;
+{}[[Prototype]]: Objectconstructor: ƒ Object()arguments: (...)assign: ƒ assign()caller: (...)create: ƒ create()defineProperties: ƒ defineProperties()defineProperty: ƒ defineProperty()entries: ƒ entries()freeze: ƒ freeze()fromEntries: ƒ fromEntries()getOwnPropertyDescriptor: ƒ getOwnPropertyDescriptor()getOwnPropertyDescriptors: ƒ getOwnPropertyDescriptors()getOwnPropertyNames: ƒ getOwnPropertyNames()getOwnPropertySymbols: ƒ getOwnPropertySymbols()getPrototypeOf: ƒ getPrototypeOf()hasOwn: ƒ hasOwn()is: ƒ is()isExtensible: ƒ isExtensible()isFrozen: ƒ isFrozen()isSealed: ƒ isSealed()keys: ƒ keys()length: 1name: "Object"preventExtensions: ƒ preventExtensions()prototype: {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}seal: ƒ seal()setPrototypeOf: ƒ setPrototypeOf()values: ƒ values()[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+a.__proto__ == Object.prototype;
+true
+var f = function () {
+console.log("hi from naman");
+}
+undefined
+f.prototype;
+{constructor: ƒ}
+f;
+ƒ () {
+console.log("hi from naman");
+}
+var t = new f;
+VM388:2 hi from naman
+undefined
+t;
+f {}[[Prototype]]: Object
+typeof t;
+'object'
+typeof f;
+'function'
+t.__proto__ = f.prototype;
+{constructor: ƒ}
+t.__proto__ == f.prototype;
+true
+t;
+f {}
+t.__proto__;
+{constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: "f"prototype: {constructor: ƒ}[[FunctionLocation]]: VM388:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1][[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+t.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+t.__proto__.__proto__ == Object.prototype;
+true
+t.__proto__.__proto__ === Object.prototype;
+true
+f.__proto__ == Function.prototype;
+true
+f.__proto__ === Function.prototype;
+true
+f.__proto__.__proto__ == Object.prototype;
+true
+f.__proto__.__proto__ === Object.prototype;
+true
+f.__proto__.__proto__.__proto__;
+null
+Object.__proto__;
+ƒ () { [native code] }
+Object.__proto__ == Function.prototype;
+true
+Typeof Object;
+VM1209:1 Uncaught SyntaxError: Unexpected identifier
+Typeof Object;
+VM1239:1 Uncaught SyntaxError: Unexpected identifier
+Typeof Function;
+VM1273:1 Uncaught SyntaxError: Unexpected identifier
+Object;
+ƒ Object() { [native code] }
+Object.constructor;
+ƒ Function() { [native code] }
+Object.constructor == Function;
+true
+Object.constructor === Function;
+true
+typof Object.constructor;
+VM1414:1 Uncaught SyntaxError: Unexpected identifier
+typeof Object.constructor;
+'function'
+object.constructor;
+VM1485:1 Uncaught ReferenceError: object is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1485:1
+Object.constructor;
+ƒ Function() { [native code] }
+Object.__proto__ == Function.prototype;
+true
+Object.prototype == Function.prototype;
+false
+Function.prototype.__proto__ == Object.prototype;
+true
+Function.constructor;
+ƒ Function() { [native code] }
+Function.__proto__ == Function.prototype;
+true
+Function.__proto__.__proto__ == Object.prototype;
+true
+
+
+
+var a = function c (){
+this.s = 12;
+    c.d = 13;
+}
+undefined
+a.name;
+'c'
+var t = new a();
+undefined
+t;
+c {s: 12}s: 12[[Prototype]]: Objectconstructor: ƒ c()[[Prototype]]: Object
+t.d;
+undefined
+t.constructor.d;
+13
+a.d;
+13
+a.prototype == c.prototype;
+VM572:1 Uncaught ReferenceError: c is not defined
+    at <anonymous>:1:16
+(anonymous) @ VM572:1
+a.prototype;
+{constructor: ƒ}
+a.prototype.__proto__ == Object.prototype;
+true
+a.prototype.h = 9;
+9
+t;
+c {s: 12}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const person = {
+  isHuman: false,
+  printIntroduction: function() {
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+  }
+};
+console.log("person object string", person.printIntroduction());
+const me = Object.create(person);
+
+me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // inherited properties can be overwritten
+
+me.printIntroduction();
+console.log("prototype check -->", me.__proto__ == person)
+console.log("prototype  -->", me.__proto__);
+console.log("constructor in prototype  -->", me.constructor);
+console.log("constructor check in prototype  -->", me.constructor == me.__proto__.__proto__.constructor);
+
+
+
+
+// expected output: "My name is Matthew. Am I human? true"
+
+
+
+
+
+
+
+
+
+
+
+
+function a(){
+console.log("naman here"); }
+undefined
+var t = function (){
+console.log("naman here"); }
+undefined
+t;
+ƒ (){
+console.log("naman here"); }
+t.name;
+'t'
+var t = function d(){
+console.log("naman here"); }
+undefined
+t.name;
+'d'
+var t = function (){
+console.log("naman here"); }
+undefined
+(function (){
+console.log("naman here"); })()
+entry-main-modern-vendor.63faba98fd934109193a.js:2 naman here
+undefined
+(function (a,b){
+console.log("naman here",a,b); })('jain','pandey')
+entry-main-modern-vendor.63faba98fd934109193a.js:2 naman here jain pandey
+undefined
+
+
+
+
+
+
+
+function g (){
+this.k = 90;
+    console.log("g called");
+}
+undefined
+k;
+VM275:1 Uncaught ReferenceError: k is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM275:1
+g();
+VM244:3 g called
+undefined
+k();
+VM308:1 Uncaught TypeError: k is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM308:1
+l();
+VM324:1 Uncaught ReferenceError: l is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM324:1
+p;
+VM335:1 Uncaught ReferenceError: p is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM335:1
+k;
+90
+var t = new g();
+VM244:3 g called
+undefined
+t;
+g {k: 90}k: 90[[Prototype]]: Object
+g.constructor;
+ƒ Function() { [native code] }
+g.constructor  == g.__proto__.constructor;
+true
+g.prototype.constructor;
+ƒ g (){
+this.k = 90;
+    console.log("g called");
+}
+
+
+var a = function(){
+console.log("a");
+};
+undefined
+var t = new a();;
+VM41:2 a
+undefined
+a.prototype.t = {};
+{}
+a.prototype.t.y =45;
+45
+t.t;
+{y: 45}
+t.t.y;
+45
+t.t.w = 34;
+34
+t;
+a {}[[Prototype]]: Objectt: w: 34y: 45[[Prototype]]: Objectconstructor: ƒ ()[[Prototype]]: Object
+t.t =12;
+12
+t;
+a {t: 12}
+t.t.w;
+undefined
+
+function d (...args)  {
+console.log(args);}
+undefined
+d(1,2,3,4);
+VM175:2 (4) [1, 2, 3, 4]
+undefined
+function d (...args)  {
+console.log("args",args,args.length);}
+undefined
+d(1,2,3,4);
+VM287:2 args (4) [1, 2, 3, 4] 4
+undefined
+
+
+
+
+
+
+
+Function instanceof Object;
+true
+Function.__proto__ == Object.prototype;
+false
+Function.constructor;
+ƒ Function() { [native code] }
+Function.__proto__ == Function.prototype;\
+VM656:1 Uncaught SyntaxError: Invalid or unexpected token
+Function.__proto__ == Function.prototype;
+true
+Function.__proto__.__proto__ == Object.prototype;
+true
+
+
+
+
+function a (){
+this.c =this.constructor.c;
+}
+undefined
+a.c =9;
+9
+var t = new a();
+undefined
+t;
+a {c: 9}
+
+
+
+
+
+
+
+var t = function(){
+    console.log("hi");
+}
+undefined
+d= new t();
+VM180:2 hi
+t {}
+d.__proto__;
+{constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: "t"prototype: {constructor: ƒ}[[FunctionLocation]]: VM180:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1][[Prototype]]: Object
+d.constructor.name = "h"
+'h'
+d.__proto__;
+{constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: "t"prototype: {constructor: ƒ}[[FunctionLocation]]: VM180:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1][[Prototype]]: Object
+t.name;
+'t'
+var s = function (){
+    console.log("h");
+
+}
+undefined
+g = new s();
+VM651:2 h
+s {}[[Prototype]]: Object
+s();
+VM651:2 h
+undefined
+g.__proto__;
+{constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: "s"prototype: {constructor: ƒ}[[FunctionLocation]]: VM651:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1][[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+d.__proto__ == s.__proto__;
+false
+d.__proto__ = s.__proto__;
+ƒ () { [native code] }
+d.__proto__;
+ƒ () { [native code] }
+d.constructor;
+ƒ Function() { [native code] }
+d.constructor.name;
+'Function'
+s.constructor.name;
+'Function'
+s.__proto__;
+ƒ () { [native code] }
+d.__proto__ = g.__proto__;
+{constructor: ƒ}
+d.constructor.name;
+'s'
+d.__proto__ == g.__proto__;
+true
+d.constructor;
+ƒ (){
+    console.log("h");
+
+}
+d.__proto__;
+{constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: "s"prototype: {constructor: ƒ}[[FunctionLocation]]: VM651:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1][[Prototype]]: Object
+
+
+
+
+
+
+
+
+
+
+
+﻿
+var a= [];
+undefined
+a.hasOwnProperty("length")
+true
+a.propertyIsEnumerable("length")
+false
+var a= [2,4];
+undefined
+a.propertyIsEnumerable("0")
+true
+a.hasOwnProperty("0")
+true
+a.hasOwnProperty("3")
+false
+a.propertyIsEnumerable("3")
+false
+a.hasOwnProperty("1")
+true
+a.propertyIsEnumerable("1")
+true
+
+
+
+
+
+
+
+﻿
+var a = [1,2,3,4];
+undefined
+a.hasOwnProperty("length")
+true
+a.hasOwnProperty("0")
+true
+a.propertyIsEnumerable("length")
+false
+a.propertyIsEnumerable("0")
+true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a=7;
+7
+d= a++ + 1;
+8
+a;
+8
+d;
+8
+d= ++a + 1;
+10
+a;
+9
+d = a++;
+9
+a;
+10
+d = ++a;
+11
+a;
+11
+
+
+
+
+
+
+
+var a= {};
+undefined
+a.constructor;
+ƒ Object() { [native code] }
+var s = function(){}
+undefined
+s.constructor;
+ƒ Function() { [native code] }
+    a.__proto__.__proto__ == Object.prototype;
+false
+    s.__proto__.__proto__ == Object.prototype;
+true
+Object.prototype.__proto__ ==null
+true
+    a.__proto__.__proto__ == null
+true
+Object.__proto__ = Function.prototype;
+ƒ () { [native code] }
+Object.__proto__ == Function.prototype;
+true
+a.__proto__ = s.__proto__;
+ƒ () { [native code] }
+a.constructor;
+ƒ Function() { [native code] }
+
+
+
+var t = Number.NaN;
+undefined
+t;
+NaN
+typeof t;
+'number'
+t;
+NaN
+t == NaN;
+false
+r = "naman"
+'naman'
+isNaN(r);
+true
+isNaN(t);
+true
+Number.isNaN(r;)
+VM380:1 Uncaught SyntaxError: missing ) after argument list
+Number.isNaN(r);
+false
+Number.isNaN(t);
+true
+
+
+
+
+a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 Object
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 Object
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 1
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 2
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 2 2
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 2 2 Object
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 2 ƒ toString() { [native code] } Object
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 2 Object Object
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 true Object
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+editor-js.js?v=89b8260:1 Object true
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+Object.prototype;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+editor-js.js?v=89b8260:1 {a: 2, constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, …} true
+editor-js.js?v=89b8260:1 a: 1
+editor-js.js?v=89b8260:1 b: 2
+editor-js.js?v=89b8260:1 c: 3
+Object.prototype.a;
+undefined
+var t = {};;
+undefined
+t.__proto__ == Object.prototype;
+true
+t.__proto__.a = 89;
+89
+Object.prototype.a;
+89
+
+
+function drawChart({size = 'big', coords = {x: 0, y: 0}, radius = 25} ) {
+  console.log(size, coords, radius);
+  // do some chart drawing
+}
+undefined
+drawChart();
+VM32:1 Uncaught TypeError: Cannot read properties of undefined (reading 'size')
+    at drawChart (<anonymous>:1:21)
+    at <anonymous>:1:1
+drawChart @ VM32:1
+(anonymous) @ VM53:1
+drawChart(1);
+VM32:2 big {x: 0, y: 0} 25
+undefined
+1.toString();
+VM108:1 Uncaught SyntaxError: Invalid or unexpected token
+1.constructor;
+VM160:1 Uncaught SyntaxError: Invalid or unexpected token
+a= 1;
+1
+a.constructor
+ƒ Number() { [native code] }
+function drawChart({size = 'big', coords = {x: 0, y: 0}, radius } ) {
+  console.log(size, coords, radius);
+  // do some chart drawing
+}
+undefined
+drawChart(1);
+VM232:2 big {x: 0, y: 0} undefined
+undefined
+
+
+
+
+
+
+
+
+
+
+var a = null;
+undefined
+typeof a;
+'object'
+a== undefined;
+true
+a == null;
+true
+
+
+
+
+
+
+
+
+function* foo(index) {
+  while (index < 2) {
+    	yield index;
+    index++;
+  }
+  
+  yield 4
+  return 5
+}
+
+const iterator = foo(0);
+
+console.log(iterator.next().value);
+// expected output: 0
+
+console.log(iterator.next().value);
+// expected output: 1
+console.log(iterator.next().value,iterator.next().value ,iterator.next().done,iterator.next().done,iterator.next().value);
+
+
+output :
+
+> 0
+> 1
+> 4 5 true true undefined
+
+
+
+
+
+
+
+
+
+
+function getRandomInt(max) {
+  var c = Math.random() * max;
+  console.log("c",c);
+  return Math.floor(c);
+}
+
+console.log(getRandomInt(3));
+// expected output: 0, 1 or 2
+
+console.log(getRandomInt(1));
+// expected output: 0
+
+console.log(Math.random());
+// expected output: a number from 0 to <1
+
+
+output : 
+
+> "c" 2.2805657149731298
+> 2
+> "c" 0.34684964258907636
+> 0
+> 0.3160749425779852
+
+
+
+Inter.var.woff2:1          Failed to load resource: the server responded with a status of 404 ()
+var t = [2,3,4,5];
+undefined
+t.propertyIsEnumerable("0");
+true
+t.propertyIsEnumerable("length");
+false
+t.hasOwnProperty("length");
+true
+t.__proto__;
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()length: 1name: "map"arguments: (...)caller: (...)[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}[[Prototype]]: Object
+t.hasOwnProperty("includes");
+false
+t.propertyIsEnumerable("includes");
+false
+
+
+
+
+var a = 'namn'
+undefined
+a.split('/')
+['namn']
+Number('ff');
+NaN
+var d = Number('ff');
+undefined
+d;
+NaN
+typeof d;
+'number'
+d.constructor;
+ƒ Number() { [native code] }
+d == NaN;
+false
+t =NaN
+NaN
+t;
+NaN
+d == t;
+false
+isNaN(d);
+true
+d.constructor == Number
+true
+var t {a;3}
+VM542:1 Uncaught SyntaxError: Unexpected token '{'
+var t {a:3}
+VM552:1 Uncaught SyntaxError: Unexpected token '{'
+var t = {a:3}
+undefined
+f= t;
+{a: 3}
+f == t;
+true
+f === t
+true
+
+
+const json = JSON.stringify({
+  toJSON: 45
+});
+
+
+undefined
+json
+'{"toJSON":45}'
+const json = JSON.stringify({
+  toJSON: () => 23
+});
+undefined
+json
+'23'
+JSON.stringify(2)
+'2'
+JSON.parse('2')
+2
+typeof JSON.parse('2')
+'number'
+
+
+a =2;
+2
+++a
+3
+f = ++a;
+4
+f;
+4
+f = a++
+4
+f;
+4
+a;
+5
+f = --a
+4
+f;
+4
+f = a-- 
+4
+a;
+3
+
+
+undefined === undefined
+true
+
+
+
+
+
+
+
+
+const x = "4";
+const y = -x;
+
+console.log(y,typeof y);
+// expected output: -4
+
+const a = '-4';
+const b = -a;
+
+console.log("b",);
+// expected output: -4
+output -->
+> -4 "number"
+> "b"
+
+
+
+
+
+var j = 0;
+undefined
+t = j++
+0
+t;
+0
+j;
+1
+
+
+Date();
+'Fri Jun 10 2022 22:55:29 GMT+0530 (India Standard Time)'
+new Date().toString();
+'Fri Jun 10 2022 22:55:44 GMT+0530 (India Standard Time)'
+
+
+
+
+function s (){return 3}
+undefined
+var t = new s();
+undefined
+t;
+s {}
+t.__proto__ == s.prototype;
+true
+s.__proto__ == Function.prototype;
+true
+s.__proto__ == Object.prototype;
+false
+Function.__proto__ == Function.prototype;
+true
+Function.__proto__.__proto__ == Function.prototype;
+false
+Function.__proto__.__proto__ == Function.prototype.__proto__;
+true
+Function.__proto__.__proto__ == Object.prototype;
+true
+Object.__proto__ == Function.prototype;
+true
+Object.__proto__.__proto__ == Object.prototype;
+true
+Object.prototype.__proto__ == null;
+true
+
+
+
+
+
+
+
+
+
+var a = [];
+undefined
+a;
+[]
+a.__proto__ == Array.prototype
+true
+a.__proto__;
+[constructor: ƒ, at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, …]at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+a.__proto__.__proto__ == Object.prototype;
+true
+
+
+
+
+
+
+
+
+
+
+const regex1 = new RegExp( 'foo', 'g' );
+const str1 = 'table football, foosball';
+const str2 = 'football,  foosballpppllollllollollololollllloollo';
+var test = regex1.test(str1);
+console.log("test",test)
+console.log(regex1.lastIndex);
+regex1.test(str1);
+console.log(regex1.lastIndex);
+var test2 = regex1.test(str2); // last index as zero 
+console.log(regex1.lastIndex,test2);
+
+console:
+> "test" true
+> 9
+> 19
+> 0 false
+
+
+
+
+
+
+
+
+var a = ''
+undefined
+a == 0;
+true
+a === 0;
+false
+a == false
+true
+
+
+
+s = "ss";
+'ss'
+s.__proto__ == String.prototype;
+true
+s instanceof String
+false
+var t = new Number(56)
+undefined
+t
+Number {56}
+t + 2
+58
+t instanceof Number;
+true
+var t = new String("ss")
+undefined
+t
+String {'ss'}
+t + "s"
+'sss'
+t instanceof String
+true
+var g  = t + "s"
+undefined
+g
+'sss'
+g instanceof String
+false
+
+
+
+
+## The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.
+const map1 = new Map();
+
+map1.set('a', 1);
+map1.set('b', 1);
+map1.set('c', 3);
+
+console.log(map1.get('a'));
+// expected output: 1
+
+map1.set('a', 97);
+
+console.log(map1.get('b'),map1.get('a'));
+// expected output:1 97
+
+console.log(map1.size);
+// expected output: 3
+
+map1.delete('b');
+
+console.log(map1.size);
+// expected output: 2
+
+
+output -->
+
+> 1
+> 1 97
+> 3
+> 2
+
+
+
+
+
+
+var a = [1,2,3,4];
+undefined
+delete a[3]
+true
+a.length
+4
+a;
+(4) [1, 2, 3, empty]
+a[3];
+undefined
+a[3] = undefined;
+undefined
+a.length
+4
+a;
+(4) [1, 2, 3, undefined]
+a.length -= 1
+3
+a;
+(3) [1, 2, 3]
+a.length -= 1
+2
+a;
+(2) [1, 2]
+a[2]
+undefined
+a[2]
+undefined
+a.length
+2
+a[1];
+2
+a.length -= 1
+1
+a[1];
+undefined
+a.length
+1
+var a = [1,2,3,4];
+undefined
+a.length;
+4
+a[3];
+4
+a.length -= 1
+3
+a[3];
+undefined
+str = "g";
+'g'
+s = str
+'g'
+s;
+'g'
+str += "w";
+'gw'
+s;
+'g'
+
+
+
+
+
+
+
+
+
+##### MAP
+const wrongMap = new Map()
+wrongMap['bla'] = 'blaa'
+wrongMap['bla2'] = 'blaaa2'
+
+'blaaa2'
+wrongMap['bla']
+'blaa'
+wrongMap['bla2']
+'blaaa2'
+wrongMap.get('bla');
+undefined
+wrongMap.size;
+0
+wrongMap.set('a',1);
+Map(1) {'a' => 1}
+wrongMap.size;
+1
+wrongMap.has('a')
+true
+wrongMap.delete('f')
+false
+wrongMap.has('a')
+true
+wrongMap.delete('a')
+true
+wrongMap.size;
+0
+
+
+
+
+const myMap = new Map()
+
+const keyString = 'a string'
+const keyObj    = {}
+const keyFunc   = function() {}
+
+// setting the values
+myMap.set(keyString, "value associated with 'a string'")
+myMap.set(keyObj, 'value associated with keyObj')
+myMap.set(keyFunc, 'value associated with keyFunc')
+
+myMap.size              // 3
+
+// getting the values
+myMap.get(keyString)    // "value associated with 'a string'"
+myMap.get(keyObj)       // "value associated with keyObj"
+myMap.get(keyFunc)      // "value associated with keyFunc"
+
+myMap.get('a string')    // "value associated with 'a string'"
+                         // because keyString === 'a string'
+myMap.get({})            // undefined, because keyObj !== {}
+myMap.get(function() {}) // undefined, because keyFunc !== function () {}
+
+
+const map1 = new Map();
+
+map1.set('a');
+map1.set('b', 2);
+map1.set('c', 3);
+
+console.log(map1.get('a'));
+// expected output: 1
+
+
+console.log(map1.get('a'));
+// expected output: 97
+
+console.log(map1.size, "t",typeof map1,map1.constructor);
+// expected output: 3
+
+map1.delete('b');
+map1.e = 90;
+
+console.log(map1.size ,"m",map1.e,map1.__proto__  == Map.prototype);
+map1.set('a', "naman");
+
+// expected output: 2
+for (let elem of map1){
+  console.log("e",elem);
+}
+console.log(map1.size)
+output -->
+
+> undefined
+> undefined
+> 3 "t" "object" function Map() { [native code] }
+> 2 "m" 90 true
+> "e" Array ["a", "naman"]
+> "e" Array ["c", 3]
+> 2
+
+
+
+
+### MAP description
+
+
+A Map object iterates its elements in insertion order — a for...of loop returns an array of [key, value] for each iteration.
+
+Object is similar to Map—both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. For this reason (and because there were no built-in alternatives), Object has been used as Map historically.
+
+Setting object properties
+Setting Object properties works for Map objects as well, and can cause considerable confusion.
+
+Therefore, this appears to work in a way:
+
+const wrongMap = new Map()
+wrongMap['bla'] = 'blaa'
+wrongMap['bla2'] = 'blaaa2'
+
+console.log(wrongMap)  // Map { bla: 'blaa', bla2: 'blaaa2' }
+But that way of setting a property does not interact with the Map data structure. It uses the feature of the generic object. The value of 'bla' is not stored in the Map for queries. Other operations on the data fail:
+
+wrongMap.has('bla')    // false
+wrongMap.delete('bla') // false
+console.log(wrongMap)  // Map { bla: 'blaa', bla2: 'blaaa2' }
+The correct usage for storing data in the Map is through the set(key, value) method.
+
+const contacts = new Map()
+contacts.set('Jessie', {phone: "213-555-1234", address: "123 N 1st Ave"})
+contacts.has('Jessie') // true
+contacts.get('Hilary') // undefined
+contacts.set('Hilary', {phone: "617-555-4321", address: "321 S 2nd St"})
+contacts.get('Jessie') // {phone: "213-555-1234", address: "123 N 1st Ave"}
+contacts.delete('Raymond') // false
+contacts.delete('Jessie') // true
+console.log(contacts.size) // 1
+Constructor
+Map()
+Creates a new Map object.
+
+##Static properties
+get Map[@@species]
+The constructor function that is used to create derived objects.
+
+Instance properties
+Map.prototype.size
+Returns the number of key/value pairs in the Map object.
+
+###Instance methods
+Map.prototype.clear()
+Removes all key-value pairs from the Map object.
+
+Map.prototype.delete(key)
+Returns true if an element in the Map object existed and has been removed, or false if the element does not exist. Map.prototype.has(key) will return false afterwards.
+
+Map.prototype.get(key)
+Returns the value associated to the key, or undefined if there is none.
+
+Map.prototype.has(key)
+Returns a boolean asserting whether a value has been associated to the key in the Map object or not.
+
+Map.prototype.set(key, value)
+Sets the value for the key in the Map object. Returns the Map object.
+
+
+
+
+
+
+
+var a = {e:3,e:4}
+undefined
+a;
+output -->
+{e: 4}
+
+
+
+
+
+
+
+
+var t = [1,2,3,4];;
+undefined
+t.length = 3
+3
+t;
+(3) [1, 2, 3]
+t[3];
+undefined
+t;
+(3) [1, 2, 3]
+t[2];
+3
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 985d1606-b6c1-4a0e-98bf-d26370a4a998 succesfully sent 200.
+t;
+(3) [1, 2, 3]0: 11: 22: 3length: 3[[Prototype]]: Array(0)
+t.length = 2
+2
+t;
+(2) [1, 2]0: 11: 2length: 2[[Prototype]]: Array(0)
+t.length = -2
+VM208:1 Uncaught RangeError: Invalid array length
+    at <anonymous>:1:10
+(anonymous) @ VM208:1
+
+
+
+
+
+
+
+
+
+
+
+
+var t = {a:34,"5" : 67} 
+undefined
+t.5
+VM195:1 Uncaught SyntaxError: Unexpected number
+t["5"]
+67
+JSON.stringify(t;)
+VM315:1 Uncaught SyntaxError: missing ) after argument list
+JSON.stringify(t)
+'{"5":67,"a":34}'
+t;
+{5: 67, a: 34}
+var t = {a:34,"5" : 67, toJSON : 45} 
+undefined
+JSON.stringify(t)
+'{"5":67,"a":34,"toJSON":45}'
+t.toJSON();
+VM494:1 Uncaught TypeError: t.toJSON is not a function
+    at <anonymous>:1:3
+(anonymous) @ VM494:1
+t.toJSON = () => 56
+() => 56
+JSON.stringify(t)
+'56'
+type.t.toJSON;
+VM578:1 Uncaught ReferenceError: type is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM578:1
+typeof t.toJSON;
+'function'
+
+
+
+
+var str = `\`nn`
+undefined
+str;
+'`nn'
+var str = `\$nn`
+undefined
+str;
+'$nn'
+var str = `\\$nn`
+undefined
+str;
+'\\$nn'
+var str = `$nn`
+undefined
+str;
+'$nn'
+var str = `${nn}`
+VM156:1 Uncaught ReferenceError: nn is not defined
+    at <anonymous>:1:11
+(anonymous) @ VM156:1
+var str = `${"d"}`
+undefined
+str;
+'d'
+var str = `\${"d"}`
+undefined
+str;
+'${"d"}'
+var str = `\$d`
+undefined
+str;
+'$d'
+var str = `\\$d`
+undefined
+str;
+'\\$d'
+var str = `\\${2}`
+undefined
+str;
+'\\2'
+var str = `\\${"ff"}`
+undefined
+str;
+'\\ff'
+var str = `\${"ff"}`
+undefined
+str;
+'${"ff"}'
+
+
+
+
+
+
+
+
+
+
+const [a,b,..rest] = [1,2]
+VM80:1 Uncaught SyntaxError: Unexpected token '.'
+const [a,b,...rest] = [1,2]
+undefined
+rest;
+[]length: 0[[Prototype]]: Array(0)
+const [a,b, , ...[c,d]] = [1,2,34,5,6,7,8]
+VM230:1 Uncaught SyntaxError: Identifier 'c' has already been declared
+const [a,b, , ...[c,d]] = [1,2,34,5,6,7,8]
+VM234:1 Uncaught SyntaxError: Identifier 'c' has already been declared
+const [a,b, , ...[d]] = [1,2,34,5,6,7,8]
+undefined
+c;
+{light: '#ffffff', dark: '#1b1b1b'}
+d;
+5
+const { a, ...{ b } } = { a: 1, b: 2 };
+VM292:1 Uncaught SyntaxError: `...` must be followed by an identifier in declaration contexts
+const { a, ...rest } = { a: 1, b: 2 };
+undefined
+rest
+{b: 2}
+const { a, ...rest } = { a: 1, b: 2 ,c:56};
+undefined
+rest
+{b: 2, c: 56}
+const { a, ...{c} } = { a: 1, b: 2 };
+VM452:1 Uncaught SyntaxError: `...` must be followed by an identifier in declaration contexts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const sym1 = Symbol();
+undefined
+sym1;
+Symbol()
+typeof sym1
+'symbol'
+const sym2 = Symbol('foo');
+undefined
+const sym3 = Symbol('foo');
+undefined
+sym1 == sym2
+false
+sym1 == sym2
+false
+var s1 = Symbol.for("foo")
+undefined
+var s2 = Symbol.for("foo")
+undefined
+s1 == s2
+true
+s1;
+Symbol(foo)
+Symbol.keyFor(s1)
+'foo'
+Symbol.keyFor(s2)
+'foo'
+var o = {}
+undefined
+Object.getOwnPropertySymbols(o)
+[]
+o[s1] = "naman"
+'naman'
+Object.getOwnPropertySymbols(o)
+[Symbol(foo)]
+o[s1]
+'naman'
+Object.getOwnPropertySymbols(o)
+[Symbol(foo)]
+var s3 = Symbol.for("naman")
+undefined
+o[s3] = 90
+90
+Object.getOwnPropertySymbols(o)
+(2) [Symbol(foo), Symbol(naman)]
+s1.description;
+'foo'
+s2.description;
+'foo'
+sym1.description;
+undefined
+sym2.description;
+'foo'
+s1.toString();
+'Symbol(foo)'
+sym2.toString();
+'Symbol(foo)'
+typeof s1
+'symbol'
+typeof s2;
+'symbol'
+typeof sym1;
+'symbol'
+Symbol.toPrimitive;
+Symbol(Symbol.toPrimitive)
+Symbol.toPrimitive();
+VM1079:1 Uncaught TypeError: Symbol.toPrimitive is not a function
+    at <anonymous>:1:8
+(anonymous) @ VM1079:1
+Symbol.toPrimitive;
+Symbol(Symbol.toPrimitive)
+s1.__proto__.isPrototypeOf(Symbol)
+false
+s1.constructorisPrototypeOf(Symbol)
+VM1381:1 Uncaught TypeError: s1.constructorisPrototypeOf is not a function
+    at <anonymous>:1:4
+(anonymous) @ VM1381:1
+s1.Prototype
+undefined
+s1.prototype
+undefined
+s1.__proto__ == Symbol.prototype;
+true
+
+
+
+
+
+
+
+
+
+
+
+
+function Foo() {}
+function Bar() {}
+Bar.prototype = Object.create(Foo.prototype);
+const bar = new Bar();
+console.log("kere",bar.__proto__ == Bar.prototype,bar.__proto__.__proto__ == Foo.prototype)
+console.log("kere2",Bar.prototype.__proto__ == Foo.prototype,Bar.prototype.__proto__.__proto__ == Object.prototype)
+
+console.log(Foo.prototype.isPrototypeOf(bar));
+// expected output: true
+console.log(Bar.prototype.isPrototypeOf(bar));
+// expected output: true
+
+---->Output 
+> "kere" true true
+> "kere2" true true
+> true
+> true
+
+
+
+
+
+
+
+
+
+var s = "n";
+undefined
+a = {d : [s] + "as"}
+{d: 'nas'}
+a = {d : [s].toString()}
+{d: 'n'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var i = 0
+undefined
+t = i++
+0
+t;
+0
+i;
+1
+r = ++i
+2
+i;
+2
+i = i++
+2
+i;
+2
+i;
+2
+i = ++i
+3
+i;
+3
+
+
+
+var arr = [1,2,3,4]
+undefined
+var obj  = {...arr}
+undefined
+obj;
+{0: 1, 1: 2, 2: 3, 3: 4}
+
+
+
+
+
+
+
+const regex1 = new RegExp('foo','g');
+
+console.log(regex1.global);
+var teststr = "naman foo foo foo foo foo"
+// expected output: true
+const s = regex1.exec(teststr);
+console.log("here s ", s ,regex1.lastIndex)
+const s2 = regex1.exec(teststr);
+console.log("here s 2", s2 ,regex1.lastIndex)
+
+const regex2 = new RegExp('bar', 'i');
+
+console.log(regex2.global);
+-->output
+
+> true
+> "here s " Array ["foo"] 9
+> "here s 2" Array ["foo"] 13
+> false
+
+
+
+
+
+
+
+
+
+
+
+
+y
+34
+function r (a){
+    this.k = a;
+    this.a = a;}
+undefined
+b = new r();
+r {k: undefined, a: undefined}
+b = new r(78);
+r {k: 78, a: 78}
+r.constructor;
+ƒ Function() { [native code] }
+r.__proto__ == Function.prototype;
+true
+r.__proto__.__proto__ == Object.prototype;
+true
+Object.prototype.__proto__ ;
+null
+Object.__proto__ == Function.prototype;
+true
+Function.prototype.__proto__ == Object.prototype;
+true
+Function.__proto__ == function.prototype;
+VM1856:1 Uncaught SyntaxError: Unexpected token '.'
+Function.__proto__ == Function.prototype;
+true
+
+
+
+
+
+
+
+
+
+
+
+
+const { a, ...{ b } } = { a: 1, b: 2 };
+VM21:1 Uncaught SyntaxError: `...` must be followed by an identifier in declaration contexts
+const { a, ...rest } = { a: 1, b: 2 };
+undefined
+rest;
+{b: 2}
+rest;
+{b: 2}
+const [a, b, ...[c, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6];
+VM102:1 Uncaught SyntaxError: Identifier 'c' has already been declared
+let [a, b, ...[c, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6];
+VM178:1 Uncaught SyntaxError: Identifier 'a' has already been declared
+let [h, b, ...[c, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6];
+VM236:1 Uncaught SyntaxError: Identifier 'c' has already been declared
+let [h, b, ...[j, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6];
+undefined
+h;
+1
+b;
+2
+j;
+3
+d;
+4
+e;
+5
+f;
+6
+let [h, b, ...[c, d, ,...[e, f]]] = [1, 2, 3, 4, 5, 6];
+VM417:1 Uncaught SyntaxError: Identifier 'c' has already been declared
+let [h, b, ...[k, d, ,...[e, f]]] = [1, 2, 3, 4, 5, 6];
+undefined
+d;
+4
+e;
+6
+f;
+undefined
+
+
+
+
+
+
+
+
+
+function s (){
+    this.a = "nama";
+}
+var t = new s();
+undefined
+t;
+s {a: 'nama'}
+var f = new s;
+undefined
+f;
+s {a: 'nama'}
+var g  = new f.constructor;
+undefined
+g;
+s {a: 'nama'}
+g.__proto__ == s.prototype;
+true
+
+
+
+
+
+
+function t (){
+    return 2;
+}
+undefined
+s  = t();
+2
+s;
+2
+s = new t();
+t {}
+s;
+t {}[[Prototype]]: Objectconstructor: ƒ t()[[Prototype]]: Object
+
+
+
+
+
+
+
+a = {};
+{}
+a[a["jan"] = 0 ]
+undefined
+a;
+{jan: 0}
+a[a["jan"] = 0 ] = "s"
+'s'
+a;
+{0: 's', jan: 0}
+a[0] = "m"
+'m'
+a;
+{0: 'm', jan: 0}
+
+
+
+
+
+
+
+
+
+
+
+
+var d  = function(){
+}
+undefined
+f  = new d;
+d {}
+f.__proto__;
+{constructor: ƒ}constructor: ƒ ()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+f.hasOwnProperty("toString");
+false
+f.__proto__.k =90;
+90
+f.hasOwnProperty("k");
+false
+h = new d;
+d {}
+h.__proto__;
+{k: 90, constructor: ƒ}k: 90constructor: ƒ ()[[Prototype]]: Object
+d.prototype;
+{k: 90, constructor: ƒ}
+
+
+
+
+
+
+
+
+
+
+var s = {};
+undefined
+s.propertyIsEnumerable("toString")
+false
+s.hasOwnProperty("toString")
+false
+var a  = [];
+undefined
+a.hasOwnProperty("lengtgh")
+false
+a.hasOwnProperty("length")
+true
+a.propertyIsEnumerable("length")
+false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+onst [a,..args] = [1,2,3,43]
+VM108:1 Uncaught SyntaxError: Unexpected token '.'
+const [a,...args] = [1,2,3,43]
+undefined
+args
+
+(3) [2, 3, 43]
+const [a,...args,r] = [1,2,3,43]
+VM175:1 Uncaught SyntaxError: Rest element must be last element
+const [a,,...args] = [1,2,3,43]
+undefined
+args
+
+(2) [3, 43]
+const ...res = 1,2,3
+VM285:1 Uncaught SyntaxError: Unexpected token '...'
+...args = 1,2,3
+VM345:1 Uncaught SyntaxError: Rest parameter may not have a default initializer
+function a(...rest){
+    console.log("here rest",rest);}
+VM612:1 Uncaught SyntaxError: Identifier 'a' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM612:1
+function b(...rest){
+    console.log("here rest",rest);}
+undefined
+b();
+VM630:2 here rest []
+undefined
+b(1,"namna",3,4)
+
+VM630:2 here rest (4) [1, 'namna', 3, 4]
+undefined
+
+
+
+
+
+
+
+
+
+
+var a = {};
+undefined
+a[2] = "n"
+'n'
+a;
+{2: 'n'}2: "n"[[Prototype]]: Object
+a['2'];
+'n'
+Object.keys(a;)
+VM274:1 Uncaught SyntaxError: missing ) after argument list
+Object.keys(a);
+['2']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+w= [];
+[]
+w;
+[]
+w['s'] = "naman"
+'naman'
+w.hasOwnProperty('w')
+false
+w.hasOwnProperty('s')
+true
+w.hasOwnProperty('length')
+true
+w.propertyIsEnumerable('length')
+false
+w.propertyIsEnumerable('s')
+true
+w;
+[s: 'naman']s: "naman"length: 0[[Prototype]]: Array(0)
+w['0'] = 08
+8
+w;
+[8, s: 'naman']0: 8s: "naman"length: 1[[Prototype]]: Array(0)
+Number('8');
+8
+var t = '8';
+undefined
+y = +t
+8
+y;
+8
+typeof y
+
+'number'
+
+
+
+
+
+
+
+
+
+> var b  = Buffer.alloc(10)
+undefined
+> b;
+<Buffer 00 00 00 00 00 00 00 00 00 00>
+> b[0]
+0
+> b.toString();
+'\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000'
+> var b  = Buffer.alloc(10,48)
+undefined
+> b.toString();
+'0000000000'
+> b;
+<Buffer 30 30 30 30 30 30 30 30 30 30>
+> var b  = Buffer.alloc(10,1)
+undefined
+> b.toString();
+'\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001'
+> var b  = Buffer.alloc(10,0)
+undefined
+> b.toString()
+'\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000'
+> b.toString(1)
+Thrown:
+TypeError [ERR_UNKNOWN_ENCODING]: Unknown encoding: 1
+    at Buffer.toString (buffer.js:780:11)
+    at repl:1:3
+    at Script.runInThisContext (vm.js:116:20)
+    at REPLServer.defaultEval (repl.js:404:29)
+    at bound (domain.js:419:14)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+    at REPLServer.onLine (repl.js:715:10)
+    at REPLServer.emit (events.js:215:7)
+    at REPLServer.EventEmitter.emit (domain.js:475:20)
+    at REPLServer.Interface._onLine (readline.js:316:10) {
+  code: 'ERR_UNKNOWN_ENCODING'
+}
+> b.toString("utf8",2)
+'\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000'
+>
+
+
+
+
+
+
+
+
+
+
+var t = [];
+undefined
+t.constructor;
+ƒ Array() { [native code] }
+t.constructor == Array
+true
+t.constructor == Object
+false
+t instanceof Array
+true
+t instanceof Function
+false
+t instanceof Object
+true
+Array.__proto__ == Object.prototype;
+false
+Object.prototype.__proto__ == null
+true
+Array.prototype.__proto__ == Object.prototype;
+true
+t.__proto__ == Array.prototype;
+true
+Array.constructor;
+ƒ Function() { [native code] }
+Array.__proto__ == Function.prototype;
+true
+Function.__proto__ == Function.prototype
+true
+Function.__proto__.__proto__ == Object.prototype
+true
+Function.constructor
+ƒ Function() { [native code] }
+Array.constructor  == Function
+true
+Array instanceof Function
+true
+Array instanceof Object
+true
+t.__proto__ == Array.prototype;
+true
+t.__proto__.__proto__ === Object.prototype;
+true
+
+
+
+
+
+
+
+
+
+
+
+
+
+function f (){ this.k =90 ; return 56;}
+undefined
+h = new f();
+f {k: 90}
+h.__proto__;
+{constructor: ƒ}constructor: ƒ f()arguments: nullcaller: nulllength: 0name: "f"prototype: {constructor: ƒ}[[FunctionLocation]]: VM837:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2][[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+h.constructor == f;
+true
+f.prototype;
+{constructor: ƒ}constructor: ƒ f()arguments: nullcaller: nulllength: 0name: "f"prototype: constructor: ƒ f()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[FunctionLocation]]: VM837:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2][[Prototype]]: Object
+f.__proto__;
+ƒ () { [native code] }
+h;
+f {k: 90}k: 90[[Prototype]]: Objectconstructor: ƒ f()[[Prototype]]: Object
+h.__proto__ == f.prototype;
+true
+h.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+h.__proto__.__proto__ == Object.prototype;
+true
+Object.prototype;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+Object.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+Object.prototype.__proto__;
+null
+Object.prototype.__proto__ = Object.prototype;
+VM1387:1 Uncaught TypeError: Immutable prototype object '#<Object>' cannot have their prototype set
+    at set __proto__ [as __proto__] (<anonymous>)
+    at <anonymous>:1:28
+(anonymous) @ VM1387:1
+Object.__proto__ == Function.prototype; 
+true
+Function.prototype.__proto__ == Objec.prototype;
+VM1621:1 Uncaught ReferenceError: Objec is not defined
+    at <anonymous>:1:33
+(anonymous) @ VM1621:1
+Function.prototype.__proto__ == Object.prototype;
+true
+Function.__proto__ == Function.prototype;
+true
+function f (){ this.k =90 ; return {l:89};}
+undefined
+b = new f();
+{l: 89}
+console.log(b);
+ {l: 89}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = {"###":6}
+undefined
+a;
+{###: 6}
+var ### = 6
+VM107:1 Uncaught SyntaxError: Invalid or unexpected token
+const { ###} = a;
+VM150:1 Uncaught SyntaxError: Invalid or unexpected token
+const { ### : o} = a;
+VM170:1 Uncaught SyntaxError: Invalid or unexpected token
+const { ### : fizz} = a;
+VM194:1 Uncaught SyntaxError: Invalid or unexpected token
+const { '###' : fizz} = a;
+undefined
+fizz
+6
+const { '###' } = a;
+VM258:1 Uncaught SyntaxError: Unexpected string
+var key = 't';
+undefined
+var o = {[key] : '7'}
+undefined
+o;
+{t: '7'}
+
+
+
+
+f = function(){
+    var g  = function(){
+        console.log("g called");}
+    return g;
+}
+ƒ (){
+    var g  = function(){
+        console.log("g called");}
+    return g;
+}
+d = f();
+ƒ (){
+        console.log("g called");}
+d();
+VM222:3 g called
+undefined
+
+
+
+
+
+
+
+
+
+
+var s = {
+    a:1,
+    b:3,
+    c:4}
+undefined
+s.hasOwnProperty("b")
+true
+s.hasOwnProperty("g")
+false
+s.__proto__.f = 5
+5
+s.f;
+5
+s.hasOwnProperty("f")
+false
+s.propertyIsEnumerable("b")
+true
+s.propertyIsEnumerable("f")
+false
+
+
+
+
+var o = {g:2}
+undefined
+o.__proto__ == Object.prototype;
+true
+o.__proto__.__proto__
+null
+o.filter;
+undefined
+Object.__proto__ == Function.prototype;
+true
+Object.__proto__.__proto__ == Object.prototype;
+true
+
+
+
+
+
+
+var t = function(){
+this.h = 78;
+}
+undefined
+h;
+VM578:1 Uncaught ReferenceError: h is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM578:1
+t();
+undefined
+h;
+78
+var u = new t();
+undefined
+u;
+t {h: 78}
+t.prototype.l = 90;
+90
+u.l;
+90
+u;
+t {h: 78}h: 78__proto__: l: 90constructor: ƒ ()__proto__: Object
+u.prototype =9;
+9
+u;
+t {h: 78, prototype: 9}
+u;
+t {h: 78, prototype: 9}
+
+
+
+
+a = 23;
+23
+function s(){
+console.log("this a",this.a)}
+undefined
+s();
+VM167:2 this a 23
+undefined
+s instanceof Object;
+true
+s instanceof Function;
+true
+s.constructor;
+ƒ Function() { [native code] }
+s.constructor == s.__proto__.constructor;
+true
+
+
+
+
+
+
+
+
+
+
+var a = [1,2,3,4];
+undefined
+a;
+(4) [1, 2, 3, 4]0: 11: 22: 33: 4length: 4__proto__: Array(0)concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+a.hasOwnProperty("length")
+true
+a.propertyIsEnumerable("length")
+false
+a.__proto__ == Array.prototype;
+true
+a.__proto__.__proto__ == Array.prototype;
+false
+a.__proto__.__proto__ == Object.prototype;
+true
+a.__proto__.__proto__ == Object.prototype;
+true
+a.__proto__.__proto__.__proto__;;
+null
+
+
+
+
+
+
+var t = 34;
+undefined
+let y = 67;
+undefined
+var f = function k (){
+console.log("t y ", this.t,y);
+    this.p = 90;
+}
+undefined
+f.name;
+'k'
+p;
+VM386:1 Uncaught ReferenceError: p is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM386:1
+f();
+VM349:2 t y  34 67
+undefined
+p;
+90
+var g = new f();
+VM349:2 t y  undefined 67
+undefined
+g;
+k {p: 90}p: 90[[Prototype]]: Objectconstructor: ƒ k()arguments: nullcaller: nulllength: 0name: "k"prototype: {constructor: ƒ}[[FunctionLocation]]: VM349:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2][[Prototype]]: Object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = '';
+undefined
+a ==false;
+true
+0 == false
+true
+0 == undefined;
+false
+a === false;
+false
+typeof a;
+'string'
+typeof false;
+'boolean'
+var s = ''
+undefined
+a ==s;
+true
+a === s;
+true
+a == 0;
+true
+
+
+
+var a  = Boolean;
+undefined
+a;
+ƒ Boolean() { [native code] }
+var t = false;
+undefined
+typeof t;
+'boolean'
+t.constructor;
+ƒ Boolean() { [native code] }
+t.constructor == a;
+true
+
+
+
+
+
+var t = 8;
+undefined
+window.t;
+8
+window.y;
+undefined
+a =9 ;
+9
+window.a;
+9
+a;
+9
+window.a = 10;
+10
+a;
+10
+this['t'];
+8
+this['a'];
+10
+
+
+
+
+
+const object1 = {};
+const a = Symbol('a');
+const b = Symbol.for('a');
+const c = Symbol.for('a');
+
+console.log(b == c)
+object1[a] = 'localSymbol';
+object1[b] = 'globalSymbol';
+
+const objectSymbols = Object.getOwnPropertySymbols(object1);
+console.log(objectSymbols)
+console.log(objectSymbols.length);
+// expected output: 2
+
+
+const promise1 = new Promise((resolve, reject) => {
+  resolve('Success!');
+});
+
+promise1.then((value) => {
+  console.log({value});
+  // expected output: "Success!"
+}).then((val)=>{
+  console.log({val})
+});
+
+
+
+let usersCount =  User.count().then((val)=>{
+            console.log({val})
+        }).then((val2) => {
+            console.log({val2})
+        },(err)=>{
+            console.log({err});
+        })
+
+
+
+
+
+false == false
+true
+undefined == false
+false
+null == false
+false
+0 == false
+true
+
+
+
+
+
+
+
+
+
+
+
+> var d = Buffer.from("pen")
+undefined
+> d;
+<Buffer 70 65 6e>
+> d[0]
+112
+>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+>
+> d[1]
+101
+> d.toString()
+'pen'
+> d.toString('base64')
+'cGVu'
+> d.toJSON();
+{ type: 'Buffer', data: [ 112, 101, 110 ] }
+> var t = Buffer.from('cGVu','base64')
+undefined
+> t;
+<Buffer 70 65 6e>
+> t.toJSON();
+{ type: 'Buffer', data: [ 112, 101, 110 ] }
+> t[0]
+112
+> t.toString();
+'pen'
+> t.toString('base64');
+'cGVu'
+> t.toString('HEX');
+'70656e'
+> t.toString('HEX',1);
+'656e'
+> t.toString('HEX',1,2\);
+t.toString('HEX',1,2\);
+                   ^
+
+Uncaught SyntaxError: Invalid or unexpected token
+> t.toString('HEX',1,2);
+'65'
+> JSON.stringify(t)
+'{"type":"Buffer","data":[112,101,110]}'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ u = new URL("https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at")
+URL {
+  href: 'https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  origin: 'https://data-layer-maadhyam-dev.b2cdev.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'data-layer-maadhyam-dev.b2cdev.com',
+  hostname: 'data-layer-maadhyam-dev.b2cdev.com',
+  port: '',
+  pathname: '/api/v1/application',
+  search: '?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  searchParams: URLSearchParams {
+    'aggregatorId' => '636c7f27f3497f00a8400761',
+    'lenderId' => '62161333967c2f00385b2695',
+    'rangeValue' => '1669746600,1671820199',
+    'rangeKey' => 'created_at' },
+  hash: ''
+}
+> global.u ;
+URL {
+  href: 'https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  origin: 'https://data-layer-maadhyam-dev.b2cdev.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'data-layer-maadhyam-dev.b2cdev.com',
+  hostname: 'data-layer-maadhyam-dev.b2cdev.com',
+  port: '',
+  pathname: '/api/v1/application',
+  search: '?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  searchParams: URLSearchParams {
+    'aggregatorId' => '636c7f27f3497f00a8400761',
+    'lenderId' => '62161333967c2f00385b2695',
+    'rangeValue' => '1669746600,1671820199',
+    'rangeKey' => 'created_at' },
+  hash: ''
+}
+> var f = u;
+undefined
+> global.f
+URL {
+  href: 'https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  origin: 'https://data-layer-maadhyam-dev.b2cdev.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'data-layer-maadhyam-dev.b2cdev.com',
+  hostname: 'data-layer-maadhyam-dev.b2cdev.com',
+  port: '',
+  pathname: '/api/v1/application',
+  search: '?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  searchParams: URLSearchParams {
+    'aggregatorId' => '636c7f27f3497f00a8400761',
+    'lenderId' => '62161333967c2f00385b2695',
+    'rangeValue' => '1669746600,1671820199',
+    'rangeKey' => 'created_at' },
+  hash: ''
+}
+> global.l
+undefined
+> var l = u;
+undefined
+> global.l
+URL {
+  href: 'https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  origin: 'https://data-layer-maadhyam-dev.b2cdev.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'data-layer-maadhyam-dev.b2cdev.com',
+  hostname: 'data-layer-maadhyam-dev.b2cdev.com',
+  port: '',
+  pathname: '/api/v1/application',
+  search: '?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  searchParams: URLSearchParams {
+    'aggregatorId' => '636c7f27f3497f00a8400761',
+    'lenderId' => '62161333967c2f00385b2695',
+    'rangeValue' => '1669746600,1671820199',
+    'rangeKey' => 'created_at' },
+  hash: ''
+}
+> u.host
+'data-layer-maadhyam-dev.b2cdev.com'
+
+
+
+
+
+
+
+
+
+
+
+> var u = new URL('https://www.example.com');
+undefined
+> u;
+URL {
+  href: 'https://www.example.com/',
+  origin: 'https://www.example.com',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'www.example.com',
+  hostname: 'www.example.com',
+  port: '',
+  pathname: '/',
+  search: '',
+  searchParams: URLSearchParams {},
+  hash: ''
+}
+> u.toJSON();
+'https://www.example.com/'
+> u.toString();
+'https://www.example.com/'
+> u.href;
+'https://www.example.com/'
+> URL.parse
+undefined
+> var url = require('node:url')
+undefined
+> url.parse("")
+>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+>
+
+C:\Users\naman.jain>
+
+C:\Users\naman.jain>node
+Welcome to Node.js v14.20.0.
+Type ".help" for more information.
+> var h = new url("")
+Uncaught TypeError: url is not a constructor
+> var h = new URL("")
+Uncaught TypeError [ERR_INVALID_URL]: Invalid URL:
+    at new NodeError (internal/errors.js:322:7)
+    at onParseError (internal/url.js:270:9)
+    at new URL (internal/url.js:346:5)
+    at REPL2:1:9
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:566:29)
+    at bound (domain.js:421:15)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+    at REPLServer.onLine (repl.js:909:10)
+    at REPLServer.emit (events.js:412:35) {
+  input: '',
+  code: 'ERR_INVALID_URL'
+}
+> var h = new URL("{s:3}")
+Uncaught TypeError [ERR_INVALID_URL]: Invalid URL: {s:3}
+    at new NodeError (internal/errors.js:322:7)
+    at onParseError (internal/url.js:270:9)
+    at new URL (internal/url.js:346:5)
+    at REPL3:1:9
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:566:29)
+    at bound (domain.js:421:15)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+    at REPLServer.onLine (repl.js:909:10)
+    at REPLServer.emit (events.js:412:35) {
+  input: '{s:3}',
+  code: 'ERR_INVALID_URL'
+}
+> var h = new URL({s:3})
+Uncaught TypeError [ERR_INVALID_URL]: Invalid URL: [object Object]
+    at new NodeError (internal/errors.js:322:7)
+    at onParseError (internal/url.js:270:9)
+    at new URL (internal/url.js:346:5)
+    at REPL4:1:9
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:566:29)
+    at bound (domain.js:421:15)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+    at REPLServer.onLine (repl.js:909:10)
+    at REPLServer.emit (events.js:412:35) {
+  input: '[object Object]',
+  code: 'ERR_INVALID_URL'
+}
+> global.URL;
+[class URL]
+> global.URL == URL;
+true
+>
+
+
+
+
+
+
+
+
+// ------------------------------legacy url api example-------------------------------------------------------------------------------------------------
+
+
+> const myURL = new URL('https://example.org/abc?123')
+undefined
+> myURL
+myURL
+
+> myURL;
+URL {
+  href: 'https://example.org/abc?123',
+  origin: 'https://example.org',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'example.org',
+  hostname: 'example.org',
+  port: '',
+  pathname: '/abc',
+  search: '?123',
+  searchParams: URLSearchParams { '123' => '' },
+  hash: ''
+}
+> myURL.search;
+'?123'
+> myURL.search = "ff"
+'ff'
+> myURL.search;
+'?ff'
+> myURL;
+URL {
+  href: 'https://example.org/abc?ff',
+  origin: 'https://example.org',
+  protocol: 'https:',
+  username: '',
+  password: '',
+  host: 'example.org',
+  hostname: 'example.org',
+  port: '',
+  pathname: '/abc',
+  search: '?ff',
+  searchParams: URLSearchParams { 'ff' => '' },
+  hash: ''
+}
+> myURL.href;
+'https://example.org/abc?ff'
+> myURL.search = "?ff"
+'?ff'
+> myURL.href;
+'https://example.org/abc?ff'
+> myURL.search;
+'?ff'
+> var lecacyUrl = require('url')
+undefined
+> legacyUrl.parse();
+Uncaught ReferenceError: legacyUrl is not defined
+> var lecacyUrl = require('url')
+undefined
+> legacyUrl;
+Uncaught ReferenceError: legacyUrl is not defined
+> var lecacyUrl = require('node:url')
+undefined
+> legacyUrl;
+Uncaught ReferenceError: legacyUrl is not defined
+> var url = require('url')
+undefined
+> url;
+{
+  Url: [Function: Url],
+  parse: [Function: urlParse],
+  resolve: [Function: urlResolve],
+  resolveObject: [Function: urlResolveObject],
+  format: [Function: urlFormat],
+  URL: [class URL],
+  URLSearchParams: [class URLSearchParams],
+  domainToASCII: [Function: domainToASCII],
+  domainToUnicode: [Function: domainToUnicode],
+  pathToFileURL: [Function: pathToFileURL],
+  fileURLToPath: [Function: fileURLToPath],
+  urlToHttpOptions: [Function: urlToHttpOptions]
+}
+> var aurl = require('url')
+undefined
+> var legacyUrl = require('url')
+undefined
+> legacyUrl
+{
+  Url: [Function: Url],
+  parse: [Function: urlParse],
+  resolve: [Function: urlResolve],
+  resolveObject: [Function: urlResolveObject],
+  format: [Function: urlFormat],
+  URL: [class URL],
+  URLSearchParams: [class URLSearchParams],
+  domainToASCII: [Function: domainToASCII],
+  domainToUnicode: [Function: domainToUnicode],
+  pathToFileURL: [Function: pathToFileURL],
+  fileURLToPath: [Function: fileURLToPath],
+  urlToHttpOptions: [Function: urlToHttpOptions]
+}
+> legacyUrl.parse("https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at")
+Url {
+  protocol: 'https:',
+  slashes: true,
+  auth: null,
+  host: 'data-layer-maadhyam-dev.b2cdev.com',
+  port: null,
+  hostname: 'data-layer-maadhyam-dev.b2cdev.com',
+  hash: null,
+  search: '?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  query: 'aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  pathname: '/api/v1/application',
+  path: '/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  href: 'https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at'
+}
+> var x = querystring.parse("foo=bar&abc=xyz&abc=123",&)
+var x = querystring.parse("foo=bar&abc=xyz&abc=123",&)
+                                                    ^
+
+Uncaught SyntaxError: Unexpected token '&'
+> var x = querystring.parse("foo=bar&abc=xyz&abc=123","&")
+undefined
+> x;
+[Object: null prototype] { foo: 'bar', abc: [ 'xyz', '123' ] }
+> var x = querystring.parse("foo=bar&abc=[xyz,123]",&)
+var x = querystring.parse("foo=bar&abc=[xyz,123]",&)
+                                                  ^
+
+Uncaught SyntaxError: Unexpected token '&'
+> var x = querystring.parse("foo=bar&abc=[xyz,123]","&")
+undefined
+> x;
+[Object: null prototype] { foo: 'bar', abc: '[xyz,123]' }
+> JSON.parse('[xyz,123]')
+Uncaught SyntaxError: Unexpected token x in JSON at position 1
+> var s = '2[22222'
+undefined
+> s;
+'2[22222'
+> s+45;
+'2[2222245'
+> 67+s;
+'672[22222'
+>
+> s;
+'2[22222'
+> 2+4
+6
+> 2 == '2'
+true
+> var oldUrl = legacyUrl.parse("https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at")
+undefined
+> oldUrl;
+Url {
+  protocol: 'https:',
+  slashes: true,
+  auth: null,
+  host: 'data-layer-maadhyam-dev.b2cdev.com',
+  port: null,
+  hostname: 'data-layer-maadhyam-dev.b2cdev.com',
+  hash: null,
+  search: '?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  query: 'aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  pathname: '/api/v1/application',
+  path: '/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  href: 'https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at'
+}
+> oldUrl.query;
+'aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at'
+> var newUrlParsed = legacyUrl.parse("https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at",true)
+undefined
+> newUrlParsed;
+Url {
+  protocol: 'https:',
+  slashes: true,
+  auth: null,
+  host: 'data-layer-maadhyam-dev.b2cdev.com',
+  port: null,
+  hostname: 'data-layer-maadhyam-dev.b2cdev.com',
+  hash: null,
+  search: '?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  query: [Object: null prototype] {
+    aggregatorId: '636c7f27f3497f00a8400761',
+    lenderId: '62161333967c2f00385b2695',
+    rangeValue: '1669746600,1671820199',
+    rangeKey: 'created_at'
+  },
+  pathname: '/api/v1/application',
+  path: '/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at',
+  href: 'https://data-layer-maadhyam-dev.b2cdev.com/api/v1/application?aggregatorId=636c7f27f3497f00a8400761&lenderId=62161333967c2f00385b2695&rangeValue=1669746600,1671820199&rangeKey=created_at'
+}
+> newUrlParsed.query;
+[Object: null prototype] {
+  aggregatorId: '636c7f27f3497f00a8400761',
+  lenderId: '62161333967c2f00385b2695',
+  rangeValue: '1669746600,1671820199',
+  rangeKey: 'created_at'
+}
+> newUrlParsed.query.aggregatorId;
+'636c7f27f3497f00a8400761'
+> var newUrlParsed = legacyUrl.parse(3,true)
+Uncaught:
+TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received type number (3)
+    at new NodeError (internal/errors.js:322:7)
+    at validateString (internal/validators.js:124:11)
+    at Url.parse (url.js:171:3)
+    at Object.urlParse [as parse] (url.js:158:13)
+    at REPL140:1:30
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:566:29)
+    at bound (domain.js:421:15)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+    at REPLServer.onLine (repl.js:909:10) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+> var newUrlParsed = legacyUrl.parse("3",true)
+undefined
+> new
+new
+
+newUrlParsed
+
+> newUrlParsed;
+Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: null,
+  query: [Object: null prototype] {},
+  pathname: '3',
+  path: '3',
+  href: '3'
+}
+> var newUrlParsed = legacyUrl.parse({a;2},true)
+var newUrlParsed = legacyUrl.parse({a;2},true)
+                                     ^
+
+Uncaught SyntaxError: Unexpected token ';'
+> var newUrlParsed = legacyUrl.parse({a:2},true)
+Uncaught:
+TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received an instance of Object
+    at new NodeError (internal/errors.js:322:7)
+    at validateString (internal/validators.js:124:11)
+    at Url.parse (url.js:171:3)
+    at Object.urlParse [as parse] (url.js:158:13)
+    at REPL144:1:30
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:566:29)
+    at bound (domain.js:421:15)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+    at REPLServer.onLine (repl.js:909:10) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+> var newUrlParsed = legacyUrl.parse('{a:2}',true)
+undefined
+> newUrlParsed;
+Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: null,
+  query: [Object: null prototype] {},
+  pathname: '%7Ba:2%7D',
+  path: '%7Ba:2%7D',
+  href: '%7Ba:2%7D'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const p1 = new Promise((resolve, reject) => {
+  resolve("Success");
+});
+undefined
+const p1 = new Promise((resolve, reject) => {
+  reject("Success");
+});
+undefined
+p1.catch((e) => {
+    console.error("ff",e);
+    return 4;// "oh, no!"
+  })
+Promise {<fulfilled>: 4}
+const p2 = p1.catch((e) => {
+    console.error("ff",e);
+    return 4;// "oh, no!"
+  })
+undefined
+const p3 = p2.then((v)=>{console.log("success",v)},(e)=>{console.log("failure",e)})
+VM639:1 success 4
+undefined
+const p4 = p3.then(()=>"naman")
+undefined
+p4.then((b)=> {console.log("hrr",b)});
+VM892:1 hrr naman
+Promise {<fulfilled>: undefined}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = function(){
+}
+undefined
+a.prototype;
+{constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: "a"prototype: {constructor: ƒ}[[FunctionLocation]]: VM110:1[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Object[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+var o  = {};
+undefined
+o.__proto__ == a.prototype.__proto__
+true
+var t new a;
+VM307:1 Uncaught SyntaxError: Unexpected token 'new'
+var t = new a;
+undefined
+t.__proto__;
+{constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: "a"prototype: {constructor: ƒ}[[FunctionLocation]]: VM110:1[[Prototype]]: ƒ ()[[Prototype]]: Object
+t.__proto__ == a.prototype;
+true
+a.__proto__;
+ƒ () { [native code] }
+a.__proto__ == Function.prototype;
+true
+Object.__proto__;
+ƒ () { [native code] }
+Object.__proto__ == Function.prototype;
+true
+Object.__proto__ == Function.__proto__
+true
+function.__proto__ == Function.prototype;
+VM798:1 Uncaught SyntaxError: Unexpected token '.'
+Function.__proto__ == Function.prototype;
+true
+Object.prototype.__proto__;
+null
+
+
+
+
+
+
+
+
+
+############instanceof description
+
+The instanceof operator tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value.
+
+example-->
+
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+const auto = new Car('Honda', 'Accord', 1998);
+
+console.log(auto instanceof Car);
+// Expected output: true
+
+console.log(auto instanceof Object);
+console.log(auto instanceof Function);
+
+
+output-->
+
+
+> true
+> true
+> false
+
+
+
+
+
+
+
+
+const n = "naman"
+const language = {
+  set [n](name) {
+    this.log.push(name);
+  },
+  log: []
+};
+
+language.naman = 'EN';
+language.naman = 'FA';
+
+console.log(language.log);
+console.log(language.current);
+
+// Expected output: Array ["EN", "FA"]
+
+
+
+
+
+
+
+
+
+
+
+var a = [1,2,3,4]
+undefined
+s =[...a]
+(4) [1, 2, 3, 4]
+s;
+(4) [1, 2, 3, 4]
+const [f,,j]=s
+undefined
+j;
+3
+f;
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> var b = Buffer.from(new String('naman'),'utf8')
+undefined
+> b;
+<Buffer 6e 61 6d 61 6e>
+> b.length
+5
+> var t = 'namaman'
+undefined
+> t.valueOf();
+'namaman'
+> b.toString('ascci')
+Uncaught TypeError [ERR_UNKNOWN_ENCODING]: Unknown encoding: ascci
+    at new NodeError (internal/errors.js:322:7)
+    at Buffer.toString (buffer.js:825:11)
+    at REPL41:1:3
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:566:29)
+    at bound (domain.js:421:15)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+    at REPLServer.onLine (repl.js:909:10)
+    at REPLServer.emit (events.js:412:35)
+    at REPLServer.emit (domain.js:475:12) {
+  code: 'ERR_UNKNOWN_ENCODING'
+}
+> b.toString('ascii')
+'naman'
+> b.toString('utf8')
+'naman'
+> b.toString('base64')
+'bmFtYW4='
+> var c = Buffer.from("bmFtYW4=","base64")
+undefined
+> c;
+<Buffer 6e 61 6d 61 6e>
+> c.length;
+5
+> c.toString();
+'naman'
+> c.toString('base64');
+'bmFtYW4='
+
+
+
+
+
+
+
+
+
+
+
+
+v= "naman"
+'naman'
+function d (){this[v] =90;}
+undefined
+d();
+undefined
+naman;
+90
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(() => {
+  try {
+    try {
+      throw new Error("oops");
+    } catch (ex) {
+      console.error("inner", ex.message);
+      throw ex;
+    } finally {
+      console.log("finally");
+      return;
+    }
+  } catch (ex) {
+    console.error("outer", ex.message);
+  }
+})();
+VM26:9 finally
+undefined
+(() => {
+  try {
+    try {
+      throw new Error("oops");
+    } catch (ex) {
+      console.log("inner", ex.message);
+      throw ex;
+    } finally {
+      console.log("finally");
+      return;
+    }
+  } catch (ex) {
+    console.error("outer", ex.message);
+  }
+})();
+VM76:6 inner oops
+VM76:9 finally
+undefined
+(() => {
+  try {
+    try {
+      throw new Error("oops");
+    } catch (ex) {
+      console.error("inner", ex.message);
+      throw ex;
+    } finally {
+      console.log("finally");
+        throw "namna"
+      return;
+    }
+  } catch (ex) {
+    console.error("outer", ex.message);
+  }
+})();
+VM233:9 finally
+undefined
+(() => {
+  try {
+    try {
+      throw new Error("oops");
+    } catch (ex) {
+      console.error("inner", ex.message);
+      throw ex;
+    } finally {
+      console.log("finally");
+        throw "naman"
+      return;
+    }
+  } catch (ex) {
+    console.log("outer", ex.message);
+  }
+})();
+VM388:9 finally
+VM388:14 outer undefined
+undefined
+(() => {
+  try {
+    try {
+      throw new Error("oops");
+    } catch (ex) {
+      console.error("inner", ex.message);
+      throw ex;
+    } finally {
+      console.log("finally");
+        throw "naman"
+      return;
+    }
+  } catch (ex) {
+    console.log("outer", ex.message);
+  }
+})();
+VM487:9 finally
+VM487:14 outer undefined
+undefined
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping d39775d0-412b-4793-886b-1f4b62b58a1b succesfully sent 200.
+(() => {
+  try {
+    try {
+      throw new Error("oops");
+    } catch (ex) {
+      console.log("inner", ex.message);
+      throw ex;
+    } finally {
+      console.log("finally");
+        throw "naman"
+      return;
+    }
+  } catch (ex) {
+    console.log("outer", ex.toString());
+  }
+})();
+VM773:6 inner oops
+VM773:9 finally
+VM773:14 outer naman
+undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var n = new Date();
+undefined
+n.getDate();
+1
+n.getFullYer();
+VM514:1 Uncaught TypeError: n.getFullYer is not a function
+    at <anonymous>:1:3
+(anonymous) @ VM514:1
+n.getFullYear();
+2023
+n.getHours();
+19
+n;
+Wed Mar 01 2023 19:27:01 GMT+0530 (India Standard Time)
+n.getTime();
+1677679021492
+n.getUTCDate();
+1
+n.getUTCHours();
+13
+n.getUTCMinutes();
+57
+n.setHours(18)
+1677675421492
+n;
+Wed Mar 01 2023 18:27:01 GMT+0530 (India Standard Time)
+n.gethours();
+VM860:1 Uncaught TypeError: n.gethours is not a function
+    at <anonymous>:1:3
+(anonymous) @ VM860:1
+n.getHours();
+18
+n.getUTCHours();
+12
+n.getMinutes()
+27
+n.getUTCMinutes();
+57
+n.getTime();
+1677675421492
+n;
+Wed Mar 01 2023 18:27:01 GMT+0530 (India Standard Time)
+n.toString();
+'Wed Mar 01 2023 18:27:01 GMT+0530 (India Standard Time)'
+n.toDateString();
+'Wed Mar 01 2023'
+n.toTimeString();
+'18:27:01 GMT+0530 (India Standard Time)'
+n.toLocaleDateString();;
+'3/1/2023'
+n.toLocaleTimeString();
+'6:27:01 PM'
+// Depending on timezone, your results will vary
+const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
+
+console.log(event.toLocaleTimeString('en-US'));
+// Expected output: "1:15:30 AM"
+
+console.log(event.toLocaleTimeString('it-IT'));
+// Expected output: "01:15:30"
+
+console.log(event.toLocaleTimeString('ar-EG'));
+// Expected output: "١٢:١٥:٣٠ ص"
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = [1,23,4]
+undefined
+a;
+(3) [1, 23, 4]0: 11: 232: 4length: 3[[Prototype]]: Array(0)
+a.hasOwnProperty('length')
+true
+a.propertyIsEnumerable('length')
+false
+a.propertyIsEnumerable('toString')
+false
+a.hasOwnProperty('toString')
+false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+const auto = new Car('Honda', 'Accord', 1998);
+
+console.log(auto instanceof Car,auto.__proto__ == Car.prototype,auto.__proto__.__proto__ == Object.prototype,Car.prototype.__proto__ == Object.prototype);
+// Expected output: true
+
+console.log(auto instanceof Object);
+// Expected output: true
+
+-->output
+> true true true true
+> true
+
+
+
+
+
+
+const person = {
+  isHuman: false,
+  printIntroduction: function() {
+    console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+  }
+};
+const me = Object.create(person);
+console.log("here",me.__proto__ == person,me instanceof Object,person.__proto__ == Object.prototype)
+me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // Inherited properties can be overwritten
+
+me.printIntroduction();
+// Expected output: "My name is Matthew. Am I human? true"
+
+-->output
+> "here" true true true
+> "My name is Matthew. Am I human? true"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var re = /cd/
+undefined
+re.test("namancd")
+true
+re.test("naman")
+false
+d = re.test("naman")
+false
+d;
+false
+re.exec("namancd")
+['cd', index: 5, input: 'namancd', groups: undefined]0: "cd"groups: undefinedindex: 5input: "namancd"length: 1[[Prototype]]: Array(0)
+re.exec("cdnamancd")
+['cd', index: 0, input: 'cdnamancd', groups: undefined]0: "cd"groups: undefinedindex: 0input: "cdnamancd"length: 1[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+d = re.exec("cdnamancd")
+['cd', index: 0, input: 'cdnamancd', groups: undefined]0: "cd"groups: undefinedindex: 0input: "cdnamancd"length: 1[[Prototype]]: Array(0)
+d[1];
+undefined
+d[0];
+'cd'
+d.length;
+1
+typeof d;
+'object'
+Array.isArray(d)
+true
+d[1]
+undefined
+re.lastIndex;
+0
+var re = /cd/g
+undefined
+d = re.exec("cdnamancd")
+['cd', index: 0, input: 'cdnamancd', groups: undefined]
+d[1]
+undefined
+d[0]
+'cd'
+re.lastIndex;
+2
+d = re.exec("cdnamancd")
+['cd', index: 7, input: 'cdnamancd', groups: undefined]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var t = [1,2,3,4];
+undefined
+Object.values(t);
+(4) [1, 2, 3, 4]0: 11: 22: 33: 4length: 4[[Prototype]]: Array(0)
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping d747470b-cc3b-488d-8afb-fb901e9aa2d1 succesfully sent 200.
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 0ef19328-392c-4383-a5f4-32e382e5ef7d succesfully sent 200.
+t.hasOwnProperty('length')
+true
+t.hasOwnProperty('toString')
+false
+t.hasOwnProperty('4')
+false
+t.hasOwnProperty('2')
+true
+t.hasOwnProperty('3');
+true
+t.propertyIsEnumerable('length')
+false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const {a,...r} = {a:9,g:89,h:90}
+undefined
+a;
+9
+r;
+{g: 89, h: 90}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue,index) => {
+    console.log("ss",accumulator, currentValue,index);
+    return accumulator + currentValue},
+  initialValue
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+
+-->output
+> "ss" 0 1 0
+> "ss" 1 2 1
+> "ss" 3 3 2
+> "ss" 6 4 3
+> 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue,index) => {
+    console.log("ss",accumulator, currentValue,index);
+    return accumulator + currentValue}
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+-->output
+> "ss" 1 2 1
+> "ss" 3 3 2
+> "ss" 6 4 3
+> 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var v = Buffer.from('cat');
+undefined
+> v;
+<Buffer 63 61 74>
+> v[0];
+99
+> v[1];
+97
+> v[2];
+116
+> v.toString('ascii')
+'cat'
+> v.toString('utf8')
+'cat'
+> v.toString('utf16')
+Uncaught TypeError [ERR_UNKNOWN_ENCODING]: Unknown encoding: utf16
+    at new NodeError (internal/errors.js:322:7)
+    at Buffer.toString (buffer.js:825:11)
+    at REPL23:1:3
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:566:29)
+    at bound (domain.js:421:15)
+    at REPLServer.runBound [as eval] (domain.js:432:12)
+>
+    at REPLServer.emit (events.js:412:35)
+    at REPLServer.emit (domain.js:475:12) {
+  code: 'ERR_UNKNOWN_ENCODING'
+}
+> v.toString()
+'cat'
+> v.toString('base64')
+'Y2F0'
+>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+> var t = Buffer.from('Y2F0');
+undefined
+> t[0]
+89
+> t[2]
+70
+> t.toString();
+'Y2F0'
+> t.toString('base64');
+'WTJGMA=='
+> var g = Buffer.from('Y2F0' , 'base64')
+und;fined
+<Buffer 63 61 74>
+> g;
+<Buffer 63 61 74>
+> g[0]
+99
+> g[1]
+97
+> g[2]
+116
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> var t = Buffer.from("k")
+undefined
+> t.toString();
+'k'
+> t.toString('base64');
+'aw=='
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Rectangle {
+  height = 0;
+  width;
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+undefined
+f = new Rectangle();
+Rectangle {height: undefined, width: undefined}height: undefinedwidth: undefined[[Prototype]]: Object
+f.height;
+undefined
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 3c0072bf-cfaf-4b04-8d4c-6d26fe8b7cc9 succesfully sent 200.
+class Rectangle {
+  height = 0;
+  width;
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+undefined
+class Rectangle {
+  height = 0;
+  width;
+  constructor(height, width) {
+    this.height = height;
+    this.width = width; return {A;2}
+  }
+}
+VM228:6 Uncaught SyntaxError: Unexpected token ';'
+class Rectangle {
+  height = 0;
+  width;
+  constructor(height, width) {
+    this.height = height;
+    this.width = width; return {A:2}
+  }
+}
+undefined
+f = new Rectangle();
+{A: 2}
+f.height;
+undefined
+f.A
+2
+class Rectangle {
+  height = 0;
+  width;
+}
+undefined
+f = new Rectangle();
+Rectangle {height: 0, width: undefined}
+f.height;
+0
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 55ca7b9f-9208-44c5-85ea-ce8938d7ab7c succesfully sent 200.
+f.width;
+undefined
+Rectangle.name;
+'Rectangle'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const {a,b,...data} = {a:90,b:34,c:3,d:67};
+undefined
+a;
+90
+b;
+34
+c;
+VM334:1 Uncaught ReferenceError: c is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM334:1
+data;
+{c: 3, d: 67}
+const {a,b,...data} = [1,2]
+undefined
+a;
+undefined
+b;
+undefined
+data;
+{0: 1, 1: 2}0: 11: 2[[Prototype]]: Object
+subscriptions.bundle.js:1 WebSocket connection to 'wss://subs.daily.dev/graphql' failed: 
+(anonymous) @ subscriptions.bundle.js:1
+subscriptions.bundle.js:1 Event {isTrusted: true, type: 'error', target: WebSocket, currentTarget: WebSocket, eventPhase: 2, …}
+(anonymous) @ subscriptions.bundle.js:1
+const {a,b,...data} = "ss"
+undefined
+const {a,b,...data} = undefined
+VM501:1 Uncaught TypeError: Cannot destructure property 'a' of 'undefined' as it is undefined.
+    at <anonymous>:1:8
+(anonymous) @ VM501:1
+data
+{0: 's', 1: 's'}0: "s"1: "s"[[Prototype]]: Object
+const {a=2,b=3,...data} = undefined
+VM555:1 Uncaught TypeError: Cannot read properties of undefined (reading 'a')
+    at <anonymous>:1:8
+(anonymous) @ VM555:1
+typeof "gg"
+'string'
+typeof 2
+'number'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for(var t of [3,4,5]){
+    if(t ==4){
+    console.log("hii",t);
+    continue;
+    }
+    console.log("hello",t)}
+VM342:6 hello 3
+VM342:3 hii 4
+VM342:6 hello 5
+
+
+
+
+
+
+
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+const auto = new Car('Honda', 'Accord', 1998);
+
+console.log(auto instanceof Car,auto.__proto__ == Car.prototype,Car.prototype.__proto__== Object.prototype);
+// Expected output: true
+console.log(Car.prototype.__proto__.__proto__ == null);
+console.log(Car.__proto__ == Function.prototype,Car.prototype);
+console.log(auto instanceof Object)
+// Expected output: true
+
+-->output
+> true true true
+> true
+> true [object Object]
+> true
+
+
+
+
+
+
+
+
+var t  = new RegExp('odg')
+undefined
+t;
+/odg/
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping f9dc6feb-72c8-4018-ac0a-287516c12907 succesfully sent 200.
+var t  = new RegExp('odg','ig')
+undefined
+t;
+/odg/gi
+t instanceof RegExp;
+true
+t instanceof Object;
+true
+t.test('hhhhh')
+false
+t.test('hhodg')
+true
+f = /dog/
+/dog/
+t.test('hhODG')
+false
+t.flags;
+'gi'
+t.test('hhOdG')
+true
+t.test('hhODG')
+false
+t.test('hhODg')
+true
+t.test('hhODG')
+false
+t.exec('sss')
+null
+t.lastIndex;
+0
+t.exec('sss')
+null
+t.exec('ssodg ffOdg odg')
+['odg', index: 2, input: 'ssodg ffOdg odg', groups: undefined]
+t.lastIndex;
+5
+t.index
+undefined
+t.exec();
+null
+t.lastIndex;
+0
+s = t.exec('ssodg ffOdg odg')
+['odg', index: 2, input: 'ssodg ffOdg odg', groups: undefined]
+s[0]
+'odg'
+s.index
+2
+t.lastIndex
+5
+s = t.exec('ssodg ffOdg odg')
+['Odg', index: 8, input: 'ssodg ffOdg odg', groups: undefined]
+t.lastIndex;
+11
+s = t.exec('ssodg ffOdg odg')
+['odg', index: 12, input: 'ssodg ffOdg odg', groups: undefined]
+t.lastIndex;
+15
+f = 'ssodg ffOdg odg'
+'ssodg ffOdg odg'
+f.length;
+15
+s = t.exec('ssodg ffOdg odg')
+null
+t.lastIndex;
+0
+s = t.exec('sdddd')
+null
+t.lastIndex
+0
+g= /pop/
+/pop/
+g.lastIndex;
+0
+g.test('dddPop')
+false
+g.test('dddpop')
+true
+g.lastIndex;
+0
+g.test('dddPop')
+false
+g.exec('dddPop     popa')
+['pop', index: 11, input: 'dddPop     popa', groups: undefined]
+g.lastIndex;
+0
+g.test('dddPop')
+false
+g.lastIndex;
+0
+g.exec('dddpop     popa')
+['pop', index: 3, input: 'dddpop     popa', groups: undefined]0: "pop"groups: undefinedindex: 3input: "dddpop     popa"length: 1[[Prototype]]: Array(0)
+g.lastIndex;
+0
+g.exec('dddpop     popa')
+['pop', index: 3, input: 'dddpop     popa', groups: undefined]
+g.lastIndex
+0
+g= /pop/g
+/pop/g
+g.exec('dddpop     popa')
+['pop', index: 3, input: 'dddpop     popa', groups: undefined]
+g.lastIndex;
+6
+g.exec('dddpop     popa')
+['pop', index: 11, input: 'dddpop     popa', groups: undefined]
+g.lastIndex;
+14
+g.lastIndex;
+14
+g.exec('dddpop     popa')
+null
+g.lastIndex;
+0
+
+
+
+
+
+
+
+a = [1,2,3]
+(3) [1, 2, 3]
+d =a.find((v)=>{return v == 6})
+undefined
+d;
+undefined
+d =a.find((v)=>{return v == 2})
+2
+d;
+2
+a.s = function (){console.log("ee",this['1']);
+
+                 }
+ƒ (){console.log("ee",this['1']);
+
+                 }
+a.s();
+VM520:1 ee 2
+undefined
+a;
+(3) [1, 2, 3, s: ƒ]
+a.s = function (){console.log("ee",this['2']);
+
+                 }
+ƒ (){console.log("ee",this['2']);
+
+                 }
+a.s();
+VM574:1 ee 3
+undefined
+a.s = function (){console.log("ee",this[1]);
+
+                 }
+ƒ (){console.log("ee",this[1]);
+
+                 }
+a.s();
+VM628:1 ee 2
+undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let a = 45
+let o  = {S:45}
+let b = 0;
+
+a &&= o;
+console.log(a);
+// Expected output: 2
+
+b &&= 2;
+console.log(b);
+// Expected output: 0
+
+-->outout
+> Object { S: 45 }
+> 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> var s = 1>2 && 3>4
+undefined
+> s;
+false
+> s;
+false
+> var s = 3>2 && 3>4
+undefined
+> s;
+false
+> var s = 3 > 2 && 6>4
+undefined
+> s;
+true
+>
+
+
+
+
+
+
+
+
+var sentence = "1234"
+undefined
+    sentence.charCodeAt(0);
+49
+    sentence.charCodeAt(3);
+52
+    sentence.charCodeAt("ddd");
+49
+
+
+
+
+
+
+
+
+
+
+
+var s = "weeeee"
+undefined
+s.charAt("ddd")
+'w'
+s.charAt(0)
+'w'
+s.charAt(1)
+'e'
+s.charAt(3)
+'e'
+s.charAt(2)
+'e'
+
+
+
+
+
+
+
+
+
+const [...rest] = [1,2]
+undefined
+rest;
+(2) [1, 2]
+const [a,...rest] = [1,2]
+undefined
+rest
+[2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = ()=>{}
+undefined
+a;
+()=>{}
+typeof a;
+'function'
+a.constructor;
+ƒ Function() { [native code] }
+a.prototype;
+undefined
+var a = ()=>{ this.b = 9}
+undefined
+b;
+VM480:1 Uncaught ReferenceError: b is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM480:1
+a();
+undefined
+b;
+9
+f= function(s){console.log("ff",s);}
+ƒ (s){console.log("ff",s);}
+f.__proto__ == Function.prototype;
+true
+f.__proto__ == Function.prototype;
+true
+Function.prototype.__proto__ == Object.prototype;
+true
+Function.__proto__ == Function.prototype;
+true
+Object.__proto__;
+ƒ () { [native code] }
+Function.prototype;
+ƒ () { [native code] }
+Object.__proto__ == Function.prototype;
+true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = {d :undefined}
+undefined
+Object.keys(a)
+['d']
+
+
+
+
+
+
+
+
+
+
+
+
+var s = [];
+undefined
+s.length
+0
+for(let i = 0 ; i <= s.length ; i++){
+    console.log("eee",i);}
+VM1403:2 eee 0
+undefined
+for(let i = 0 ; i <= s.length-1 ; i++){
+    console.log("eee",i);}
+undefined
+0-1;
+-1
+d = 1
+1
+var r = d++
+undefined
+r;
+1
+d;
+2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var y = [2,3,]
+undefined
+y;
+(2) [2, 3]0: 21: 3length: 2[[Prototype]]: Array(0)
+Object.keys(y)
+(2) ['0', '1']
+const [s,{...rest}] = y
+undefined
+s;
+2
+rest;
+{}[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+const [s,...{rest}] = y
+undefined
+rest;
+undefined
+const [s,...{opo}] = y
+undefined
+const [s,...{pop}] = y
+undefined
+pop
+ƒ pop() { [native code] }
+const [s,d,...rest}] = y
+VM537:1 Uncaught SyntaxError: Unexpected token '}'
+const [s,d,...rest] = y
+undefined
+rest;
+[]
+const {pop} = rest;
+undefined
+pop;
+ƒ pop() { [native code] }
+rest;
+[]length: 0[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()length: 1name: "some"arguments: (...)caller: (...)[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+rest.hasOwnProperty('pop')
+false
+rest.__proto__.hasOwnProperty('pop')
+true
+rest.__proto__ = Array.prototype;
+[constructor: ƒ, at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, …]
+rest.__proto__ == Array.prototype;
+true
+rest.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+rest.__proto__.__proto__ == Object.prototype;
+true
+var t = [1,2,3,4];;
+undefined
+const [a,b,...[,d]] = t
+undefined
+a;
+1
+b;
+2
+d;
+4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var t = function(){
+    this.d = 2;
+    return {e:5};
+}
+undefined
+d;
+VM218:1 Uncaught ReferenceError: d is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM218:1
+var r = new t();
+undefined
+r;
+{e: 5}
+r.e;
+5
+d;
+VM392:1 Uncaught ReferenceError: d is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM392:1
+r.d;
+undefined
+t.name;
+'t'
+var t = function s(){
+    this.d = 2;
+    return {e:5};
+}
+undefined
+t.name;
+'s'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class BaseClassWithPrivateStaticField {
+  static #PRIVATE_STATIC_FIELD;
+
+  static basePublicStaticMethod() { console.log("here static method called");
+    return this.#PRIVATE_STATIC_FIELD;
+  }
+}
+
+undefined
+class SubClass extends BaseClassWithPrivateStaticField {}
+undefined
+SubClass.basePublicStaticMethod();
+VM157:4 here static method called
+VM157:5 Uncaught TypeError: Cannot read private member #PRIVATE_STATIC_FIELD from an object whose class did not declare it
+    at SubClass.basePublicStaticMethod (<anonymous>:5:17)
+    at <anonymous>:1:10
+basePublicStaticMethod @ VM157:5
+(anonymous) @ VM237:1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var t = [2,3,4,5];
+undefined
+for (let r of t){
+    console.log("eeee",r,typeof r);
+}
+VM529:2 eeee 2 number
+VM529:2 eeee 3 number
+VM529:2 eeee 4 number
+VM529:2 eeee 5 number
+undefined
+var t = {a:23,f:34}
+undefined
+for (let r in t){
+    console.log("eeee",r,typeof r);
+}
+VM591:2 eeee a string
+VM591:2 eeee f string
+undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+const array = [1, 3, 3, 4, 5];
+
+// Checks whether an element is even
+const even = (element) => {console.log("here"); 
+return element % 2 === 0;
+                          }
+console.log(array.some(even));
+// Expected output: true
+--> output
+
+> "here"
+> "here"
+> "here"
+> "here"
+> true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var s  = ["s","f"]
+undefined
+s.includes("f")
+true
+s.includes("2")
+false
+s.includes(2)
+false
+var s  = ["s","f",2]
+undefined
+s.includes(2)
+true
+s.includes("2")
+false
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var s = true
+undefined
+s.constructor;
+ƒ Boolean() { [native code] }
+s.toString();
+'true'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var t = {a:2};
+undefined
+base.js:1821 [Violation] 'setTimeout' handler took 81ms
+2 in t;
+false
+'a' in t;
+true
+DevTools failed to load source map: Could not load content for https://www.youtube.com/s/desktop/945ad0b2/jsbin/custom-elements-es5-adapter.vflset/blaze-out/k8-opt/bin/third_party/javascript/custom_elements/fast-shim.js.sourcemap: Load canceled due to load timeout
+a in t;
+VM1301:1 Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1301:1
+a = 'a';
+'a'
+a in t;
+true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const person = {
+  name: "namn",
+  isHuman: false,
+  printIntroduction: function() {
+    console.log(`My name is ${this.__proto__.name}. Am I human? ${this.isHuman}`);
+  }
+};
+
+const me = Object.create(person);
+console.log("here me ",me.__proto__ == person);
+me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
+// me.isHuman = true; // Inherited properties can be overwritten
+
+me.printIntroduction();
+// Expected output: "My name is Matthew. Am I human? true"
+
+-->output
+> "here me " true
+> "My name is namn. Am I human? false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ v = Buffer.from('JVBE','base64')
+<Buffer 25 50 44>
+> v..toString();
+v..toString();
+  ^
+
+Uncaught SyntaxError: Unexpected token '.'
+> v.toString();
+'%PD'
+> v.toString('utf8');
+'%PD'
+> v.toString('ascii');
+'%PD'
+> v[0];
+37
+> v[1]
+80
+> v[2]
+68
+> global.v;
+<Buffer 25 50 44>
+> global.p
+undefined
+> p = Buffer.from('%PD')
+<Buffer 25 50 44>
+> global.p
+<Buffer 25 50 44>
+> p.toString('base64')
+'JVBE'
+>
+
+
+
+
+
+
+
+
+
+
+
+var t = {a:23,f:34};
+undefined
+Object.entries(t);
+(2) [Array(2), Array(2)]0: (2) ['a', 23]1: (2) ['f', 34]length: 2[[Prototype]]: Array(0)
+t= [3,4,5,7];
+(4) [3, 4, 5, 7]
+Object.values(t);
+(4) [3, 4, 5, 7]
+
+
+
+
+
+
+
+
+
+
+const foo = null ?? 'default string';
+console.log(foo);
+// Expected output: "default string"
+b = null
+const baz = 0 ?? 42;
+
+console.log("heerr ",baz);
+// Expected output: 0
+const c = null ?? b ;
+// expected output null
+console.log("here c",c);
+
+--> output
+> "default string"
+> "heerr " 0
+> "here c" null
+
+
+
+
+
+
+
+## Getters
+
+const obj = {
+  log: ['a', 'b', 'c'],
+  get latest() {
+    console.log("here");
+    return this.log[this.log.length - 1];
+  }
+};
+
+console.log(obj.latest);
+// Expected output: "c"
+
+
+
+--> output
+> "here"
+> "c"
+
+
+
+
+
+
+
+
+
+## Array filter
+const words = [{a:1},{a:2}];
+
+const result = words.filter(word => {
+
+return true});
+words[0].b = 9;
+console.log(result);
+
+
+-->output
+> Array [Object { a: 1, b: 9 }, Object { a: 2 }]
+
+
+
+
+
+
+## Array Map
+const array1 = [1, 2, 9, 16];
+
+// Pass a function to map
+const map1 = array1.map((x,i )=> {x * 2; console.log("here index",i,x)});
+
+console.log(map1);
+
+
+
+
+-->Output
+> "here index" 0 1
+> "here index" 1 2
+> "here index" 2 9
+> "here index" 3 16
+> Array [undefined, undefined, undefined, undefined]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+parseFloat(123.456)
+123.456
+123.456.toFixed(2)
+'123.46'
+123.456.toFixed(2)
+'123.46'
+123.456.round();
+VM176:1 Uncaught TypeError: 123.456.round is not a function
+    at <anonymous>:1:9
+(anonymous) @ VM176:1
+123.round();
+VM217:1 Uncaught SyntaxError: Invalid or unexpected token
+parseFloat("123")
+123
+parseFloat("123.56")
+123.56
+parseFloat(123.56)
+123.56
+parseFloat(123)
+123
+parseFloat(1dd23)
+VM335:1 Uncaught SyntaxError: Invalid or unexpected token
+parseFloat("1dd23")
+1
+parseFloat(v"1dd23")
+VM376:1 Uncaught SyntaxError: missing ) after argument list
+parseFloat("d1dd23")
+NaN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var r = [1,2];
+undefined
+var r = [1,2,4,6];
+undefined
+const [,...t ] = r;
+undefined
+t;
+(3) [2, 4, 6]
+s = [5,...r]
+(5) [5, 1, 2, 4, 6]
+var a = function fa(...params) {
+    console.log("here params",params,typeof params);}
+    
+}
+VM524:4 Uncaught SyntaxError: Unexpected token '}'
+var a = function fa(...params) {
+    console.log("here params",params,typeof params);
+    
+}
+undefined
+a.name;
+'fa'
+a(2,"naman",56,7)
+VM554:2 here params (4) [2, 'naman', 56, 7]0: 21: "naman"2: 563: 7length: 4[[Prototype]]: Array(0) object
+undefined
+var a = function fa(...params) {
+    console.log("here params",params,Array.isArray(params),typeof params);
+    
+}
+undefined
+a(2,"naman",56,7)
+VM716:2 here params (4) [2, 'naman', 56, 7] true object
+undefined
+var b = function(..params) {
+ console.log("here params",params);}    
+}
+VM942:1 Uncaught SyntaxError: Unexpected token '.'
+var b = function(...params) {
+ console.log("here params",params);}    
+}
+VM957:3 Uncaught SyntaxError: Unexpected token '}'
+var b = function(...params) {
+ console.log("here params",params);    
+}
+undefined
+b.name;
+'b'
+b(1,2,3,76)
+VM971:2 here params (4) [1, 2, 3, 76]
+undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var t = 11.3678
+undefined
+t;
+11.3678
+window.t;
+11.3678
+typeof t;
+'number'
+Math.ceil(t)
+12
+Math.ceil(11.001)
+12
+Math.ceil(11.5)
+12
+Math.ceil(11.56799)
+12
+Math.ceil(11.99)
+12
+Math.floor(11.99)
+11
+Number("11.345")
+11.345
+typeof Number("11.345")
+'number'
+May_08_2023_6388340_wmsbar.js:1 [Violation] 'setTimeout' handler took 54ms
+
+
+
+
+
+
+## Math.round method
+
+If the fractional portion of the argument is greater than 0.5, the argument is rounded to the integer with the next higher absolute value. 
+If it is less than 0.5, the argument is rounded to the integer with the lower absolute value. 
+If the fractional portion is exactly 0.5, the argument is rounded to the next integer in the direction of +∞.
+
+
+example-
+console.log(Math.round(0.7));
+// Expected output: 1
+
+console.log(Math.round(5.95), Math.round(5.5), Math.round(5.05));
+// Expected output: 6 6 5
+
+console.log(Math.round(-5.05), Math.round(-5.5), Math.round(-5.95));
+// Expected output: -5 -5 -6
+
+
+-->output
+> 1
+> 6 6 5
+> -5 -5 -6
+
+
+
+
+
+
+## getters in string concept
+const obj = {
+  log: ['a', 'b', 'c'],
+  get 0() {
+    return this.log[this.log.length - 1];
+  }
+};
+obj[0] = 90
+ console.log(obj[0]);
+// Expected output: "c"
+
+-->output
+> "c"
+
+
+## for deep copy of objects
+
+var a = {d:2}
+undefined
+var f = JSON.stringify(a)
+undefined
+var f = JSON.parse(SON.stringify(a))
+VM957:1 Uncaught ReferenceError: SON is not defined
+    at <anonymous>:1:20
+(anonymous) @ VM957:1
+var f = JSON.parse(JSON.stringify(a))
+undefined
+f;
+{d: 2}
+a;
+{d: 2}
+a.d = 90
+90
+a;
+{d: 90}
+s
+
+
+## Deep cloning object approach
+
+// Deep Clone
+const obj3 = { a: 0, b: { c: 0 } };
+const obj4 = JSON.parse(JSON.stringify(obj3));
+obj3.a = 4;
+obj3.b.c = 4;
+console.log(obj4); // { a: 0, b: { c: 0 } }
+
+
+
+
+
+
+
+
+
+
+
+
+
+Number("2");
+2
+Number("23.56");
+23.56
+Number("23.5600");
+23.56
+parseInt("aaa3)
+VM131:1 Uncaught SyntaxError: Invalid or unexpected token
+parseInt("aaa3")
+NaN
+parseInt("3.44g")
+3
+parseFloa("3.44g")
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const str = '*The quick \t brown fox jumps over the lazy dog.';
+const words = str.split('*');
+console.log("str",str)
+console.log(words);
+// Expected output: "fox"
+
+const chars = str.split('');
+console.log(chars[8]);
+// Expected output: "k"
+
+const strCopy = str.split();
+console.log(strCopy);
+// Expected output: Array ["The quick brown fox jumps over the lazy dog."]
+
+-->output
+> "str" "*The quick 	 brown fox jumps over the lazy dog."
+> Array ["", "The quick 	 brown fox jumps over the lazy dog."]
+> "c"
+> Array ["*The quick 	 brown fox jumps over the lazy dog."]
+
+
+
+
+
+
+
+
+
+
+
+
+var d = new Date();
+undefined
+d.valueOf();
+1685622360664
+d.getMinutes();
+56
+d.getUTCMinutes();
+26
+d.toString();
+'Thu Jun 01 2023 17:56:00 GMT+0530 (India Standard Time)'
+d.toUTCString();
+'Thu, 01 Jun 2023 12:26:00 GMT'
+d.toISOString();
+'2023-06-01T12:26:00.664Z'
+d.getUTCMilliseconds();
+664
+
+
+
+
+
+
+
+var d = new Date();
+undefined
+d.getTime();
+1685622778085
+d.valueOf();
+1685622778085
+
+
+
+const today = new Date("05 October 2011 14:48 UTC")
+today.toISOString();
+'2011-10-05T14:48:00.000Z'
+Date.parse('2011-10-05T14:48:00.000Z')
+1317826080000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Default parametres
+function multiply(a, b) {
+  return a * b;
+}
+
+undefined
+multiply(5, 2)
+10
+multiply(5)
+NaN
+function multiply(a, b =9) {
+  return a * b;
+}
+
+undefined
+multiply(5)
+45
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = {a:23,c:34}
+undefined
+Object.values(a)
+(2) [23, 34]
+Object.keys(a)
+(2) ['a', 'c']
+for(let s in a){console.log("ff",s)}
+VM206:1 ff a
+VM206:1 ff c
+undefined
+for(let s of a){console.log("ff",s)}
+VM213:1 Uncaught TypeError: a is not iterable
+    at <anonymous>:1:14
+(anonymous) @ VM213:1
+var a = [3,2]
+undefined
+for(let s in a){console.log("ff",s)}
+VM262:1 ff 0
+VM262:1 ff 1
+undefined
+for(let s of a){console.log("ff",s)}
+VM277:1 ff 3
+VM277:1 ff 2
+undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> var t = Buffer.from("hat");
+undefined
+> t;
+<Buffer 68 61 74>
+> t[0]
+104
+> t.toString();
+'hat'
+> t.toString('base64');
+'aGF0'
+> var f = Buffer.from('aGF0','base64');
+undefined
+> f;
+<Buffer 68 61 74>
+> f[0]
+104
+> f.toString();
+'hat'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> var t = Buffer.from('cat')
+undefined
+> t;
+<Buffer 63 61 74>
+> t.toString();
+'cat'
+> t.toString("base64");
+'Y2F0'
+> var t = Buffer.from('Y2F0')
+undefined
+> var t = Buffer.from('Y2F0','base64')
+undefined
+> t;
+<Buffer 63 61 74>
+> t.toString();
+'cat'
+> t.toString('base64');
+'Y2F0'
+> t.toString('hex');
+'636174'
+> t;
+<Buffer 63 61 74>
+> t[0]
+99
+> t.toString('utf8',1);
+'at'
+> t.toString('base64',1);
+'YXQ='
+> var g = buffer.from('YXQ=','base64')
+Uncaught TypeError: buffer.from is not a function
+> var g = Buffer.from('YXQ=','base64');
+undefined
+> g;
+<Buffer 61 74>
+> g.toString();
+'at'
+> g.toString('utf8',1);
+'t'
+>
+
+
+
+
+
+
+
+
+
+
+let [...rest] = [1,2,3,4]
+undefined
+rest
+(4) [1, 2, 3, 4]
+rest.length
+4
+
+
+
+
+
+
+
+
+
+
+
+const array = [1, 2, 3, 4, 5];
+
+// Checks whether an element is even
+const even = (element) => {console.log("here",element);return element % 2 === 0};
+
+console.log(array.some(even));
+// Expected output: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var d = new Date();
+undefined
+d.getTime();
+1688983670352
+Date.now();
+1688983689191
+d.toISOString();
+'2023-07-10T10:07:50.352Z'
+d.getUTCMilliseconds();
+352
+d.getMilliseconds()
+352
+
+
+
+
+
+
+
+
+
+
+
+
+
+##String.prototype.padEnd()
+The padEnd() method pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of the current string.
+
+const str1 = 'Breaded Mushrooms';
+
+console.log(str1.padEnd(25, '.'));
+// Expected output: "Breaded Mushrooms........"
+
+const str2 = '200';
+
+console.log(str2.padEnd(5));
+// Expected output: "200  "
+
+
+-->output
+> "Breaded Mushrooms........"
+> "200  "
+
+
+
+
+
+
+
+var t = "naman"
+undefined
+t.slice(-2)
+'an'
+t.slice(-2,4)
+ 
+
+
+
+
+
+## Rest parameter must be last formal parameter of the function
+
+
+function funct1(a,...args){
+    console.log("here args",a,args);}
+undefined
+func1(2,3,4,6)
+VM741:1 Uncaught ReferenceError: func1 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM741:1
+funct1(2,3,4,6)
+VM688:2 here args 2 (3) [3, 4, 6]
+undefined
+function funct2(...args,a){
+    console.log("here args",a,args);}
+VM760:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+
+
+
+
+
+
+
+
+
+
+
+## using ternary operators for adding properties in op=bject coditionally
+var t = {a: 0 || 1 || "naman" ,...(true ? {b:1} : {})}
+undefined
+t;
+{a: 1, b: 1}
+t;
+{a: 1, b: 1}
+var t = {a: 0 || 1 || "naman" ,...(false ? {b:1} : {})}
+undefined
+t;
+{a: 1}
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var t = {a: true ? "trueValue" : "falseVAlue",b:1}
+undefined
+t;
+{a: 'trueValue', b: 1}
+var t = {a: 0 || false ,b:1}
+undefined
+t;
+{a: false, b: 1}
+var t = {a: 0 || 1 ,b:1}
+undefined
+t;
+{a: 1, b: 1}
+var t = {a: 0 || 1 || "naman" ,b:1}
+undefined
+t;
+{a: 1, b: 1}
+var t = {a: 0 || 1 || "naman" ,(true ? b:1 : {})}
+VM305:1 Uncaught SyntaxError: Unexpected token '('
+var t = {a: 0 || 1 || "naman" ,(true ? {b:1} : {})}
+VM310:1 Uncaught SyntaxError: Unexpected token '('
+var t = {a: 0 || 1 || "naman" ,...(true ? {b:1} : {})}
+undefined
+t;
+{a: 1, b: 1}
+t;
+{a: 1, b: 1}
+var t = {a: 0 || 1 || "naman" ,...(false ? {b:1} : {})}
+undefined
+t;
+{a: 1}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> parseInt('-1.3333')
+-1
+> parseInt('1.3333')
+1
+> typeofparseInt('1.3333')
+Uncaught ReferenceError: typeofparseInt is not defined
+>  typeof parseInt('-1.34')
+'number'
+> parseInt('-1.34')
+-1
+> parseInt('ff-1.34')
+NaN
+> typeof NaN
+'number'
+> typeof typeof NaN
+'string'
+> typeof parseInt('ff-1.34')
+'number'
+> parseInt('ff-1.34')
+NaN
+> parseInt('ff-1.34');
+NaN
+> NaN == NaN
+false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> Date constructor method to get time in milliseconds
+Date.now()
+1690828821531
+
+-->--> Date instance method to get time in milliseconds
+var t = new Date()
+undefined
+t.getTime()
+1690828835943
+
+
+
+
+
+
+## Destructuring syntax
+
+
+
+d = [2,3,4,56]
+(4) [2, 3, 4, 56]
+const [a,b,...t] = d;
+undefined
+a;
+2
+b;
+3
+t;
+(2) [4, 56]
+const numbers = [];
+const obj = { a: 1, b: 2 };
+({ a: numbers[0], b: numbers[1] } = obj);
+{a: 1, b: 2}
+numbers;
+(2) [1, 2]
+numbers[0]
+1
+const numbers = [];
+const obj = { a: 4, b: 2 };
+({ a: numbers[0], b: numbers[1] } = obj);
+{a: 4, b: 2}
+numbers[0]
+4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var t = null
+undefined
+if(t)console.log("t is true");
+undefined
+if(t)console.log("t is true");
+undefined
+if(t)console.log("t is true");
+else console.log("t is false")
+VM284:2 t is false
+undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+// lexical scope
+var t =90;
+undefined
+window.t;
+90
+var s = {
+    a:()=>this.l,
+    b:67
+}
+undefined
+b.b;
+VM186:1 Uncaught ReferenceError: b is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM186:1
+s.b;
+67
+s.a;
+()=>this.l
+s.a();
+undefined
+l = 980
+980
+s.a();
+980
+
+
+## Hoisting
+Hoisting is a concept that enables us to extract values of variables and functions even before initializing/assigning value without getting errors and this happens during the 1st phase (memory creation phase) of the Execution Context.
+
+Features of Hoisting:
+
+In JavaScript, Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution. Basically, it gives us an advantage that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local. 
+It allows us to call functions before even writing them in our code. 
+Note: JavaScript only hoists declarations, not initializations.
+
+JavaScript allocates memory for all variables and functions defined in the program before execution.
+
+
+
+## functional hoisting
+fun(); // Calling before declaration
+     
+    function fun(){ // Declaring
+        console.log("Function is hoisted");
+    }
+VM9374:4 Function is hoisted
+
+
+
+
+
+
+## Hoisting
+> console.log("here names ",b); const b = 90;
+Uncaught ReferenceError: Cannot access 'b' before initialization
+> b;
+Uncaught ReferenceError: b is not defined
+> console.log("here names ",b); const b = 90;
+Uncaught SyntaxError: Identifier 'b' has already been declared
+> b = 78;
+Uncaught TypeError: Assignment to constant variable.
+> b;
+Uncaught ReferenceError: b is not defined
+> console.log("here names ",c); var c = 90;
+here names  undefined
+undefined
+> c;
+90
+> abc(); function abc(){console.log("here");}
+here
+undefined
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = [1,2]
+undefined
+a.hasOwnProperty('0')
+true
+a.hasOwnProperty('1')
+true
+a.hasOwnProperty('2')
+false
+a.propertyIsEnumerable('1')
+true
+a.propertyIsEnumerable('0')
+true
+a.propertyIsEnumerable('length')
+false
+a.hasOwnProperty('length')
+true
+d.hasOwnProperty('toJSON')
+true
+d.propertyIsEnumerable('toJSON')
+true
+d;
+[{…}, toJSON: ƒ]
+for (k in d){console.log(k)}
+VM430:1 0
+VM430:1 toJSON
+undefined
+var t = {a:5,t:4}
+undefined
+Object.values(t)
+(2) [5, 4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Number("33")
+33
+Number("33g")
+NaN
+parseInt("33g")
+33
+parseFloat("33g")
+33
+parseFloat("33.66g")
+33.66
+parseFloat("f33.66g")
+NaN
+parseInt("f33.66g")
+NaN
+parseInt("33.66g")
+33
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## buffer base64 to utf-8 process
+
+ var t = Buffer.from('YmFua29wZW51YXQ6YmFua29wZW51YXQ','base64')
+undefined
+> t;
+<Buffer 62 61 6e 6b 6f 70 65 6e 75 61 74 3a 62 61 6e 6b 6f 70 65 6e 75 61 74>
+> t.toString();
+'bankopenuat:bankopenuat'
+> t.toString('utf-8');
+'bankopenuat:bankopenuat'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Array.prototype.keys()
+The keys() method of Array instances returns a new array iterator object that contains the keys for each index in the array.
+
+const array1 = ['a', 'b', 'c'];
+const iterator = array1.keys();
+// console.log("ggg",iterator.next().value)
+for (const key of iterator) {
+  console.log(key);
+}
+
+// Expected output: 0
+// Expected output: 1
+// Expected output: 2
+
+-->output
+> 0
+> 1
+> 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i = Object.create({a:3})
+{}
+i;
+{}[[Prototype]]: Objecta: 3[[Prototype]]: Object
+i.a;
+3
+i.a =9
+9
+i;
+{a: 9}a: 9[[Prototype]]: Objecta: 3[[Prototype]]: Object
+i.toString();
+'[object Object]'
+h = Object.create(nuyll)
+VM465:1 Uncaught ReferenceError: nuyll is not defined
+    at <anonymous>:1:19
+(anonymous) @ VM465:1
+h = Object.create(null)
+{}No properties
+h.__proto__
+undefined
+typeof h.__proto__
+'undefined'
+typeof null
+'object'
+a = null
+null
+a;
+null
+null == null
+true
+null === null
+true
+null == undefined
+true
+null === undefined
+false
+typeof undefined;
+'undefined'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 == '0'
+true
+'0' == false
+true
+if('0') console.log('true')
+VM466:1 true
+undefined
+if(false) console.log('true')
+undefined
+'' == false
+true
+0 == false
+true
+0 === false
+false
+'' === false
+false
+typeof ''
+'string'
+'0' === false
+false
+'0' == false
+true
+if(0) console.log('true')
+undefined
+if('0') console.log('true')
+VM602:1 true
+undefined
+0 == '0'
+true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2log.js:12 (Glean.core.metrics.String) navigator.user_agent: Value length 111 exceeds maximum of 100.
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 9dff1e60-ab35-4cfb-ac75-d643e58f804a successfully sent 200.
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 6df4bdba-876b-44b4-9dc6-4ddba795e7f9 successfully sent 200.
+log.js:15 (Glean.core.Upload.PingUploadManager) Ping 29565ced-7d95-4508-8f18-0e44f49f57cd successfully sent 200.
+var m = new Map();
+undefined
+m;
+Map(0) {size: 0}[[Entries]]No propertiessize: 0[[Prototype]]: Mapclear: ƒ clear()constructor: ƒ Map()delete: ƒ delete()entries: ƒ entries()forEach: ƒ forEach()get: ƒ ()has: ƒ has()keys: ƒ keys()set: ƒ ()size: (...)values: ƒ values()Symbol(Symbol.iterator): ƒ entries()Symbol(Symbol.toStringTag): "Map"get size: ƒ size()[[Prototype]]: Object
+m.hasOwnProperty('forEach')
+false
+m.hasOwnProperty('size')
+false
+var t = ["e",2];
+undefined
+t;
+(2) ['e', 2]0: "e"1: 2length: 2[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+t.hasOwnProperty('length')
+true
+t.hasOwnProperty('0')
+true
+t.hasOwnProperty('1')
+true
+t.hasOwnProperty('3')
+false
+t.propertyIsEnumerable('3')
+false
+t.propertyIsEnumerable('2')
+false
+t.propertyIsEnumerable('1')
+true
+t.propertyIsEnumerable('0')
+true
+t.propertyIsEnumerable('length')
+false
+map.get
+VM300:1 Uncaught ReferenceError: map is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM300:1
+m.get('1')
+undefined
+m.get(1)
+undefined
+m.set(1,2)
+Map(1) {1 => 2}
+m.get('1')
+undefined
+m.get(1)
+2
+m.size;
+1
+m.set("name","naman")
+Map(2) {1 => 2, 'name' => 'naman'}
+m.forEach((e)=> {console.log("f",e)})
+VM576:1 f 2
+VM576:1 f naman
+undefined
+m.forEach((e,v)=> {console.log("f",e,v)})
+VM616:1 f 2 1
+VM616:1 f naman name
+undefined
+m.size;
+2
+name = "f"
+'f'
+m.get(name;)
+VM749:1 Uncaught SyntaxError: missing ) after argument list
+m.get(name)
+undefined
+name = "name"
+'name'
+m.get(name)
+'naman'
+m.get('name');
+'naman'
+en;
+VM855:1 Uncaught ReferenceError: en is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM855:1
+en = m.entries();
+MapIterator {1 => 2, 'name' => 'naman'}
+t;
+(2) ['e', 2]
+f =t.entries()
+Array Iterator {}
+f;
+Array Iterator {}[[Prototype]]: Array Iteratornext: ƒ next()Symbol(Symbol.toStringTag): "Array Iterator"[[Prototype]]: ObjectSymbol(Symbol.iterator): ƒ [Symbol.iterator]()[[Prototype]]: Objectconstructor: ƒ Object()assign: ƒ assign()create: ƒ create()defineProperties: ƒ defineProperties()defineProperty: ƒ defineProperty()entries: ƒ entries()freeze: ƒ freeze()fromEntries: ƒ fromEntries()getOwnPropertyDescriptor: ƒ getOwnPropertyDescriptor()getOwnPropertyDescriptors: ƒ getOwnPropertyDescriptors()getOwnPropertyNames: ƒ getOwnPropertyNames()getOwnPropertySymbols: ƒ getOwnPropertySymbols()getPrototypeOf: ƒ getPrototypeOf()groupBy: ƒ groupBy()hasOwn: ƒ hasOwn()is: ƒ is()isExtensible: ƒ isExtensible()isFrozen: ƒ isFrozen()isSealed: ƒ isSealed()keys: ƒ keys()length: 1name: "Object"preventExtensions: ƒ preventExtensions()prototype: {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}seal: ƒ seal()setPrototypeOf: ƒ setPrototypeOf()values: ƒ values()arguments: (...)caller: (...)[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+f.constructor;
+ƒ Object() { [native code] }
+en
+MapIterator {1 => 2, 'name' => 'naman'}
+for(let [key,value] of en){
+    console.log("here", key ,value);}
+VM1191:2 here 1 2
+VM1191:2 here name naman
+undefined
+en.next().value
+undefined
+en
+MapIterator {}
+en = m.entries();
+MapIterator {1 => 2, 'name' => 'naman'}
+en.next().value
+(2) [1, 2]0: 11: 2length: 2[[Prototype]]: Array(0)
+k = m.keys();
+MapIterator {1, 'name'}
+for(let key of en){
+    console.log("here", key );}
+VM1374:2 here (2) ['name', 'naman']0: "name"1: "naman"length: 2[[Prototype]]: Array(0)
+undefined
+k.next().value;
+1
+for(let key of en){
+    console.log("here", key );}
+undefined
+en = m.entries();
+MapIterator {1 => 2, 'name' => 'naman'}
+for(let key of en){
+    console.log("here", key );}
+VM1478:2 here (2) [1, 2]
+VM1478:2 here (2) ['name', 'naman']
+undefined
+for(let key of en){
+    console.log("here", key );}
+undefined
+k = m.keys();
+MapIterator {1, 'name'}
+for(let key of k){
+    console.log("here", key );}
+VM1506:2 here 1
+VM1506:2 here name
+undefined
+k = m.values();
+MapIterator {2, 'naman'}
+for(let value of v){
+    console.log("here", value );}
+VM1585:1 Uncaught ReferenceError: v is not defined
+    at <anonymous>:1:18
+(anonymous) @ VM1585:1
+v = m.values();
+MapIterator {2, 'naman'}
+for(let value of v){
+    console.log("here", value );}
+VM1596:2 here 2
+VM1596:2 here naman
+undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var a = {s:1}
+undefined
+a.hasOwnProperty("s")
+true
+a.hasOwnProperty("__proto__")
+false
+a.propertyIsEnumerable("s")
+true
+a;
+{s: 1}s: 1[[Prototype]]: Object
+a.hasOwnProperty('__proto__')
+false
+Object.entries(a)
+[Array(2)]0: (2) ['s', 1]0: "s"1: 1length: 2[[Prototype]]: Array(0)length: 1[[Prototype]]: Array(0)
+arr = Object.entries(a)
+[Array(2)]
+arr.length;
+1
+arr[0];
+(2) ['s', 1]0: "s"1: 1length: 2[[Prototype]]: Array(0)
+arr.__proto__ == Array.prototype;
+true
+arr.__proto__.__proto__ == Object.prototype;
+true
+arr.__proto__.__proto__.__proto__ == null
+true
+arr.__proto__.__proto__.__proto__ == undefined
+true
+arr.__proto__.__proto__.__proto__ === undefined
+false
+arr.__proto__.__proto__.__proto__ === null
+true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+t = "nfnfn\""
+'nfnfn"'
+t.length
+6
+t = "nfnfn\ggggg""
+VM1017:1 Uncaught SyntaxError: Invalid or unexpected token
+t = "nfnfn\ggggg"
+'nfnfnggggg'
+t = "nfnfn\fgggg"
+'nfnfn\fgggg'
+t = "nfnfn\kgggg"
+'nfnfnkgggg'
+t.length
+10
+t = "nfnfn\ngggg"
+'nfnfn\ngggg'
+t;
+'nfnfn\ngggg'
+console.log(t)
+VM1180:1 nfnfn
+gggg
+undefined
+t.length
+10
+t = "nfnfn\fgggg"
+'nfnfn\fgggg'
+console.log(t)
+VM1222:1 nfnfngggg
+undefined
+t.length
+10
+t = "nfnfn\tgggg"
+'nfnfn\tgggg'
+t.length
+10
+t.length
+10
+t = "nfnfn\jgggg"
+'nfnfnjgggg'
+t.length
+10
+console.log(t)
+VM1299:1 nfnfnjgggg
+undefined

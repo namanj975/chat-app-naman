@@ -1,0 +1,82 @@
+_.sortBy(collection, [iteratees=[_.identity]])
+source npm package
+
+Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee. This method performs a stable sort, that is, it preserves the original sort order of equal elements. The iteratees are invoked with one argument: (value).
+
+Since
+0.1.0
+
+Arguments
+collection (Array|Object): The collection to iterate over.
+[iteratees=[_.identity]] (...(Function|Function[])): The iteratees to sort by.
+Returns
+(Array): Returns the new sorted array.
+
+Example
+var users = [
+  { 'user': 'fred',   'age': 48 },
+  { 'user': 'barney', 'age': 36 },
+  { 'user': 'fred',   'age': 40 },
+  { 'user': 'barney', 'age': 34 }
+];
+ 
+_.sortBy(users, [function(o) { return o.user; },function(o) { return 1; }]);
+// => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+ 
+// _.sortBy(users, ['user', 'age']);
+// => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
+
+Array (4 items)
+0: Object {user: "barney", age: 36}
+1: Object {user: "barney", age: 34}
+2: Object {user: "fred", age: 48}
+3: Object {user: "fred", age: 40}
+Array Prototype
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_.remove(array, [predicate=_.identity])
+source npm package
+
+Removes all elements from array that predicate returns truthy for and returns an array of the removed elements. The predicate is invoked with three arguments: (value, index, array).
+
+Note: Unlike _.filter, this method mutates array. Use _.pull to pull elements from an array by value.
+
+Since
+2.0.0
+
+Arguments
+array (Array): The array to modify.
+[predicate=_.identity] (Function): The function invoked per iteration.
+Returns
+(Array): Returns the new array of removed elements.
+
+
+
+
+
+var array = [{a:1,s:[{d:2}]},{a:2,s:[{d:3}]}];
+var evens = _.remove(array,{s:[{d:2}]});
+ 
+console.log(evens);
+console.log(array);
+
+// => [2, 4]
+
+-->Output
+0: Object {a: 1, s: [Object {d: 2}]}
+0: Object {a: 2, s: [Object {d: 3}]}
